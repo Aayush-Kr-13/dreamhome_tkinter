@@ -1,6 +1,7 @@
 import tkinter as tk
 import mysql.connector
 import string
+import os
 
 def submit_data():
     property_no = property_no_entry.get()
@@ -38,60 +39,64 @@ def submit_data():
     tk.messagebox.showinfo("Success", "Data submitted successfully")
     
 root = tk.Tk()
+root.geometry("500x500")
+frame = tk.Frame(root, width=500, height=500, bg="lightgreen")
+frame.pack(fill=tk.BOTH, expand=True)
+
 root.title("Property Registration")
 
-property_no_label = tk.Label(root, text="Property Number:")
-property_no_label.grid(row=0, column=0)
-property_no_entry = tk.Entry(root)
-property_no_entry.grid(row=0, column=1)
+property_no_label = tk.Label(frame, text="Property Number:")
+property_no_label.grid(row=0, column=1, padx=10, pady=10)
+property_no_entry = tk.Entry(frame)
+property_no_entry.grid(row=0, column=2)
 
-property_type_label = tk.Label(root, text="Property Type:")
-property_type_label.grid(row=1, column=0)
-property_type_entry = tk.Entry(root)
-property_type_entry.grid(row=1, column=1)
+property_type_label = tk.Label(frame, text="Property Type:")
+property_type_label.grid(row=2, column=1, padx=10, pady=10)
+property_type_entry = tk.Entry(frame)
+property_type_entry.grid(row=2, column=2)
 
-rooms_label = tk.Label(root, text="Number Of Rooms:")
-rooms_label.grid(row=2, column=0)
-rooms_entry = tk.Entry(root)
-rooms_entry.grid(row=2, column=1)
+rooms_label = tk.Label(frame, text="Number Of Rooms:")
+rooms_label.grid(row=3, column=1, padx=10, pady=10)
+rooms_entry = tk.Entry(frame)
+rooms_entry.grid(row=3, column=2)
 
-rent_label = tk.Label(root, text="Enter Rent:")
-rent_label.grid(row=3, column=0)
-rent_entry = tk.Entry(root)
-rent_entry.grid(row=3, column=1)
+rent_label = tk.Label(frame, text="Enter Rent:")
+rent_label.grid(row=4, column=1, padx=10, pady=10)
+rent_entry = tk.Entry(frame)
+rent_entry.grid(row=4, column=2)
 
-Address_hno_label = tk.Label(root, text="Enter House Number:")
-Address_hno_label.grid(row=4, column=0)
-Address_hno_entry = tk.Entry(root)
-Address_hno_entry.grid(row=4, column=1)
+Address_hno_label = tk.Label(frame, text="Enter House Number:")
+Address_hno_label.grid(row=5, column=1, padx=10, pady=10)
+Address_hno_entry = tk.Entry(frame)
+Address_hno_entry.grid(row=5, column=2)
 
-Address_street_label = tk.Label(root, text="Enter Street Name:")
-Address_street_label.grid(row=5, column=0)
-Address_street_entry = tk.Entry(root)
-Address_street_entry.grid(row=5, column=1)
+Address_street_label = tk.Label(frame, text="Enter Street Name:")
+Address_street_label.grid(row=6, column=1, padx=10, pady=10)
+Address_street_entry = tk.Entry(frame)
+Address_street_entry.grid(row=6, column=2)
 
-city_label = tk.Label(root, text="Enter City:")
-city_label.grid(row=6, column=0)
-city_entry = tk.Entry(root)
-city_entry.grid(row=6, column=1)
+city_label = tk.Label(frame, text="Enter City:")
+city_label.grid(row=7, column=1, padx=10, pady=10)
+city_entry = tk.Entry(frame)
+city_entry.grid(row=7, column=2)
 
-postal_code_label = tk.Label(root, text="Enter Postal Code:")
-postal_code_label.grid(row=7, column=0)
-postal_code_entry = tk.Entry(root)
-postal_code_entry.grid(row=7, column=1)
+postal_code_label = tk.Label(frame, text="Enter Postal Code:")
+postal_code_label.grid(row=8, column=1, padx=10, pady=10)
+postal_code_entry = tk.Entry(frame)
+postal_code_entry.grid(row=8, column=2)
 
-owner_name_label = tk.Label(root, text="Enter Owner Name:")
-owner_name_label.grid(row=8, column=0)
-owner_name_entry = tk.Entry(root)
-owner_name_entry.grid(row=8, column=1)
+owner_name_label = tk.Label(frame, text="Enter Owner Name:")
+owner_name_label.grid(row=9, column=1, padx=10, pady=10)
+owner_name_entry = tk.Entry(frame)
+owner_name_entry.grid(row=9, column=2)
 
-owner_number_label = tk.Label(root, text="Enter Owner Number:")
-owner_number_label.grid(row=9, column=0)
-owner_number_entry = tk.Entry(root)
-owner_number_entry.grid(row=9, column=1)
+owner_number_label = tk.Label(frame, text="Enter Owner Number:")
+owner_number_label.grid(row=10, column=1, padx=10, pady=10)
+owner_number_entry = tk.Entry(frame)
+owner_number_entry.grid(row=10, column=2)
 
-submit_button = tk.Button(root, text="Submit", command=submit_data)
-submit_button.grid(row=10, column=0, columnspan=2)
+submit_button = tk.Button(frame, text="Submit", command=submit_data)
+submit_button.grid(row=14, column=1, columnspan=3, padx=30, pady=45)
 
 root.mainloop()
 

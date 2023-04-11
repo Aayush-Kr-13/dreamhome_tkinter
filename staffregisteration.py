@@ -2,6 +2,7 @@ import tkinter as tk
 import mysql.connector
 import random
 import string
+import os
 
 def generate_random_string(length):
     all_chars = list(string.digits + string.ascii_letters.upper())
@@ -41,38 +42,42 @@ def submit_data():
 root = tk.Tk()
 root.title("Staff Registration")
 
-fname_label = tk.Label(root, text="First Name:")
-fname_label.grid(row=0, column=0)
-fname_entry = tk.Entry(root)
-fname_entry.grid(row=0, column=1)
+root.geometry("350x350")
+frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
+frame.pack(fill=tk.BOTH, expand=True)
 
-lname_label = tk.Label(root, text="Last Name:")
-lname_label.grid(row=1, column=0)
-lname_entry = tk.Entry(root)
-lname_entry.grid(row=1, column=1)
+fname_label = tk.Label(frame, text="First Name:")
+fname_label.grid(row=0, column=1, padx=20, pady=15)
+fname_entry = tk.Entry(frame)
+fname_entry.grid(row=0, column=2)
 
-gender_label = tk.Label(root, text="Gender:")
-gender_label.grid(row=2, column=0)
-gender_entry = tk.Entry(root)
-gender_entry.grid(row=2, column=1)
+lname_label = tk.Label(frame, text="Last Name:")
+lname_label.grid(row=1, column=1, padx=20, pady=15)
+lname_entry = tk.Entry(frame)
+lname_entry.grid(row=1, column=2)
 
-dob_label = tk.Label(root, text="DOB:")
-dob_label.grid(row=3, column=0)
-dob_entry = tk.Entry(root)
-dob_entry.grid(row=3, column=1)
+gender_label = tk.Label(frame, text="Gender:")
+gender_label.grid(row=2, column=1, padx=20, pady=15)
+gender_entry = tk.Entry(frame)
+gender_entry.grid(row=2, column=2)
 
-position_label = tk.Label(root, text="Position:")
-position_label.grid(row=4, column=0)
-position_entry=tk.Entry(root)
-position_entry.grid(row=4, column = 1)
+dob_label = tk.Label(frame, text="DOB:")
+dob_label.grid(row=3, column=1, padx=20, pady=15)
+dob_entry = tk.Entry(frame)
+dob_entry.grid(row=3, column=2)
 
-supervisor_label = tk.Label(root, text="Supervisor:")
-supervisor_label.grid(row=5 , column =0)
-supervisor_entry = tk.Entry(root)
-supervisor_entry.grid(row=5 , column=1)
+position_label = tk.Label(frame, text="Position:")
+position_label.grid(row=4, column=1, padx=20, pady=15)
+position_entry=tk.Entry(frame)
+position_entry.grid(row=4, column = 2)
 
-submit_button = tk.Button(root, text="Submit", command=submit_data)
-submit_button.grid(row=6, column=0, columnspan=2)
+supervisor_label = tk.Label(frame, text="Supervisor:")
+supervisor_label.grid(row=5, column=1, padx=20, pady=15)
+supervisor_entry = tk.Entry(frame)
+supervisor_entry.grid(row=5 , column=2)
+
+submit_button = tk.Button(frame, text="Submit", command=submit_data)
+submit_button.grid(row=6, column=1, columnspan=2,padx=20, pady=15)
 
 root.mainloop()
 
