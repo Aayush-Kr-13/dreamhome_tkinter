@@ -14,19 +14,21 @@ def submit_data():
     fname = fname_entry.get()
     lname = lname_entry.get()
     gender = gender_entry.get()
+    branch=branch_entry.get();
+    salary=salary_entry.get();
     dob = dob_entry.get()
     position = position_entry.get()
     supervisor = supervisor_entry.get()
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
+        password='12345',
+        database='proj'
     )
     staffno = generate_random_string(10)
     cursor = db.cursor()
-    sql = "INSERT INTO staffs (staffno ,fname, lname, gender, dob, position, supervisor ) VALUES (%s, %s, %s, %s,%s,%s,%s)"
-    values = (staffno ,fname, lname, gender, dob, position, supervisor )
+    sql = "INSERT INTO staffs (staffno ,fname, lname, gender, dob, position, supervisor,branch_id,salary ) VALUES (%s, %s, %s, %s,%s,%s,%s,%s,%s)"
+    values = (staffno ,fname, lname, gender, dob, position, supervisor,branch,salary )
     cursor.execute(sql, values)
     db.commit()
     db.close()
@@ -36,14 +38,16 @@ def submit_data():
     dob_entry.delete(0, tk.END)
     position_entry.delete(0, tk.END)
     supervisor_entry.delete(0, tk.END)
+    branch_entry.delete(0, tk.END)
+    salary_entry.delete(0, tk.END)
     tk.messagebox.showinfo("Success", "Data submitted successfully")
     staffno=""
     
 root = tk.Tk()
 root.title("Staff Registration")
 
-root.geometry("350x350")
-frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
+root.geometry("350x450")
+frame = tk.Frame(root, width=350, height=450, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
 
 fname_label = tk.Label(frame, text="First Name:")
@@ -76,8 +80,18 @@ supervisor_label.grid(row=5, column=1, padx=20, pady=15)
 supervisor_entry = tk.Entry(frame)
 supervisor_entry.grid(row=5 , column=2)
 
+branch_label = tk.Label(frame, text="Branch_id:")
+branch_label.grid(row=6, column=1, padx=20, pady=15)
+branch_entry = tk.Entry(frame)
+branch_entry.grid(row=6 , column=2)
+
+salary_label = tk.Label(frame, text="Salary:")
+salary_label.grid(row=7, column=1, padx=20, pady=15)
+salary_entry = tk.Entry(frame)
+salary_entry.grid(row=7 , column=2)
+
 submit_button = tk.Button(frame, text="Submit", command=submit_data)
-submit_button.grid(row=6, column=1, columnspan=2,padx=20, pady=15)
+submit_button.grid(row=8, column=1, columnspan=2,padx=20, pady=15)
 
 root.mainloop()
 
