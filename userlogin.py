@@ -4,7 +4,7 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python main.py")
+    os.system("python userInterface.py")
 
 def check_credentials():
     clientno = id_box.get()
