@@ -2,23 +2,25 @@ THIS IS A FILE TO MAINTAIN ALL THE SCHEMAS OF THE DIFFERENT TABLES
 
 CLIENTS(Aayush ka source of income)
 
-clientno varchar (10) PRIMARY KEY ,
+create table clients (clientno varchar (10) PRIMARY KEY ,
 fname varchar (25),
-lname varchar (25), 
-telno varchar (25), 
-email varchar (25)
+ lname varchar (25),
+ telno varchar (25), 
+ email varchar (25)
+ );
 
 STAFF
 
-staffno varchar (10) PRIMARY KEY ,
-fname varchar (25), 
-lname varchar (25),
-gender char (6), 
+create table staffs (staffno varchar (10) PRIMARY KEY,
+fname varchar (25),
+lname varchar (25), 
+gender char (6),
 dob varchar (25), 
-position varchar (25), 
+position varchar (25),
 supervisor varchar (25),
-branch_id int,
-salary int
+branch_id varchar (25),
+salary numeric
+);
 
 BRANCH_DETAILS
 
