@@ -5,8 +5,8 @@ def show_table(city):
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
+        password='12345',
+        database='proj'
     )
     root.destroy()
     cursor = db.cursor()
