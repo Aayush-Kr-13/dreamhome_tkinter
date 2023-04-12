@@ -28,7 +28,7 @@ root.geometry("350x350")
 frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
 
-button = tk.Button(frame, text="Branch List", command=show_table)
+button = tk.Button(frame, text="All Branch List", command=show_table)
 button.pack(pady=20)
 
 root.mainloop()
