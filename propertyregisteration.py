@@ -102,7 +102,7 @@ owner_number_label.grid(row=10, column=1, padx=10, pady=10)
 owner_number_entry = tk.Entry(frame)
 owner_number_entry.grid(row=10, column=2)
 
-submit_button = tk.Button(frame, text="Submit", command=submit_data)
+submit_button = tk.Button(frame, text="Submit",fg="brown", command=submit_data)
 submit_button.grid(row=11, column=1, columnspan=3, padx=30, pady=10)
 
 root.mainloop()

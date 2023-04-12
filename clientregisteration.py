@@ -72,7 +72,7 @@ email_entry.grid(row=4, column=2)
 null_label = tk.Label(frame, text="")
 null_label.grid(row=5, column=0)
 
-submit_button = tk.Button(frame, text="Submit", command=submit_data)
+submit_button = tk.Button(frame, text="Submit",fg="brown", command=submit_data)
 submit_button.grid(row=6, column=1, columnspan=2)
 
 
