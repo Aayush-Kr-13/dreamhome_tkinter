@@ -50,8 +50,8 @@ def open_code_1():
 root = tk.Tk()
 root.title("Staff Registration")
 
-root.geometry("350x500")
-frame = tk.Frame(root, width=350, height=500, bg="lightgreen")
+root.geometry("330x500")
+frame = tk.Frame(root, width=330, height=500, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
 
 button1 = tk.Button(frame, text="Home",fg="red", command=open_code_1)
@@ -97,7 +97,7 @@ salary_label.grid(row=8, column=1, padx=20, pady=15)
 salary_entry = tk.Entry(frame)
 salary_entry.grid(row=8 , column=2)
 
-submit_button = tk.Button(frame, text="Submit", command=submit_data)
+submit_button = tk.Button(frame, text="Submit",fg="brown", command=submit_data)
 submit_button.grid(row=9, column=1, columnspan=2,padx=20, pady=10)
 
 root.mainloop()
