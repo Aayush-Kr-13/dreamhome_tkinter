@@ -3,13 +3,14 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python propertyregisteration.py")
+    os.system("python dreamhome_tkinter\\propertyregisteration.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python propertylist.py")
+    os.system("python dreamhome_tkinter\\propertylist.py")
 
 root = tk.Tk()
+root.title("Interface")
 root.geometry("350x350")
 frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)

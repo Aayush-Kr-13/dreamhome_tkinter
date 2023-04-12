@@ -4,7 +4,7 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python userInterface.py")
+    os.system("python dreamhome_tkinter\\userInterface.py")
 
 def check_credentials():
     clientno = id_box.get()
@@ -32,6 +32,7 @@ def check_credentials():
 
 
 root = tk.Tk()
+root.title("User Login")
 root.geometry("350x500")
 frame = tk.Frame(root, width=350, height=500, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)

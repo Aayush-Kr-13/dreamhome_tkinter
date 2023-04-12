@@ -3,15 +3,15 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python addbranch.py")
+    os.system("python dreamhome_tkinter\\addbranch.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python propertylist.py")
+    os.system("python dreamhome_tkinter\\propertylist.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python branchlist.py")
+    os.system("python dreamhome_tkinter\\branchlist.py")
     
 def open_code_4():
     root.destroy()

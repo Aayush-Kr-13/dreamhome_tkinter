@@ -13,8 +13,8 @@ def submit_data():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='12345',
-        database='proj'
+        password='Aayush@2301',
+        database='Dreamhouse'
     )
     cursor = db.cursor()
     sql = "INSERT INTO branches (branch_id, branch_name, branch_hno, branch_street, branch_city, branch_postal_code) VALUES (%s, %s, %s, %s,%s,%s)"
@@ -32,7 +32,7 @@ def submit_data():
 
 def open_code_1():
     root.destroy()
-    os.system("python main.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
 
 root = tk.Tk()
 root.geometry("350x500")
