@@ -14,8 +14,8 @@ def submit_data():
     fname = fname_entry.get()
     lname = lname_entry.get()
     gender = gender_entry.get()
-    branch=branch_entry.get();
-    salary=salary_entry.get();
+    branch=branch_entry.get()
+    salary=salary_entry.get()
     dob = dob_entry.get()
     position = position_entry.get()
     supervisor = supervisor_entry.get()

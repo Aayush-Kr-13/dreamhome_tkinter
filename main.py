@@ -3,15 +3,15 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python clientregisteration.py")
+    os.system("python dreamhome_tkinter\clientregisteration.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python propertyregisteration.py")
+    os.system("python dreamhome_tkinter\propertyregisteration.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python staffregisteration.py")
+    os.system("python dreamhome_tkinter\staffregisteration.py")
 
 root = tk.Tk()
 root.geometry("350x350")
