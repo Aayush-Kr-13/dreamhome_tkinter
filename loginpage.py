@@ -3,15 +3,15 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\userlogin.py")
+    os.system("python userlogin.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python dreamhome_tkinter\stafflogin.py")
+    os.system("python stafflogin.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python dreamhome_tkinter\adminlogin.py")
+    os.system("python adminlogin.py")
 
 root = tk.Tk()
 root.geometry("350x350")

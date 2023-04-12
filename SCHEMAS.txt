@@ -2,23 +2,25 @@ THIS IS A FILE TO MAINTAIN ALL THE SCHEMAS OF THE DIFFERENT TABLES
 
 CLIENTS(Aayush ka source of income)
 
-clientno varchar (10) PRIMARY KEY ,
+create table clients (clientno varchar (10) PRIMARY KEY ,
 fname varchar (25),
-lname varchar (25), 
-telno varchar (25), 
-email varchar (25)
+ lname varchar (25),
+ telno varchar (25), 
+ email varchar (25)
+ );
 
 STAFF
 
-staffno varchar (10) PRIMARY KEY ,
-fname varchar (25), 
-lname varchar (25),
-gender char (6), 
+create table staffs (staffno varchar (10) PRIMARY KEY,
+fname varchar (25),
+lname varchar (25), 
+gender char (6),
 dob varchar (25), 
-position varchar (25), 
+position varchar (25),
 supervisor varchar (25),
-branch_id int,
-salary int
+branch_id varchar (25),
+salary numeric
+);
 
 BRANCH_DETAILS
 
@@ -38,6 +40,21 @@ insert into branches values("000001","VIDYANAGAR_BRANCH","AI-77","WARRINGTON STR
 ("000005","GLASGOW_BRANCH_1","23_10u_70","WARRINGTON STREET","GLASGOW","900119");
 insert into branches values("000006","GLASGOW_BRANCH_2","23_10u_70","WARRINGTON STREET","GLASGOW","900200");
 
+
+
+Properties
+
+create table properties (
+property_no varchar (10) PRIMARY KEY, 
+property_type varchar (10),
+rooms numeric (2),
+rent numeric (10),
+Address_hno numeric (10), 
+Address_street varchar (10), 
+city varchar (15), postal_code varchar (10), 
+owner_name varchar (25), 
+owner_number varchar (25));
+alter table properties add verificiation bool default false;
 
 QUERIES:
 
