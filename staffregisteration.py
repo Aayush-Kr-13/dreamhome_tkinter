@@ -45,7 +45,7 @@ def submit_data():
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\admininterface.py")
+    os.system("python admininterface.py")
    
 root = tk.Tk()
 root.title("Staff Registration")

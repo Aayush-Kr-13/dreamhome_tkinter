@@ -4,11 +4,11 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\staffinterface.py")
+    os.system("python staffinterface.py")
     
 def open_code_2():
     root.destroy()
-    os.system("python dreamhome_tkinter\\loginpage.py")
+    os.system("python loginpage.py")
 
 def check_credentials():
     staffno = id_box.get()

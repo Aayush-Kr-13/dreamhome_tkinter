@@ -37,7 +37,7 @@ def submit_data():
  
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\loginpage.py")
+    os.system("python loginpage.py")
 
 root = tk.Tk()
 root.title("User Registeration")
@@ -51,7 +51,7 @@ large_font1 = ('Verdana', 10)
 user_label = tk.Label(frame, text="User Registration",bg="#2C3E50",fg="Orange",font=large_font)
 user_label.place(x=100,y=22)
 
-button1 = tk.Button(frame, text="Home",fg="red", command=open_code_1)
+button1 = tk.Button(frame, text="Back",fg="red", command=open_code_1)
 button1.place(x=10,y=10)
 
 fname_label = tk.Label(frame, text="First Name:",bg="silver",font=large_font1)

@@ -3,23 +3,23 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\addbranch.py")
+    os.system("python addbranch.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python dreamhome_tkinter\\propertylist.py")
+    os.system("python propertylist.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python dreamhome_tkinter\\branchlist.py")
+    os.system("python branchlist.py")
     
 def open_code_4():
     root.destroy()
-    os.system("python dreamhome_tkinter\\staffregisteration.py")
+    os.system("python staffregisteration.py")
     
 def open_code_5():
     root.destroy()
-    os.system("python dreamhome_tkinter\\loginpage.py")
+    os.system("python loginpage.py")
     
 
 root = tk.Tk()

@@ -6,15 +6,15 @@ def open_code_1():
   verify_button.config(background="Green")
   verify_button.config(background="Green")
   window.destroy()
-  os.system("python dreamhome_tkinter\\propertyverifier.py")
+  os.system("python propertyverifier.py")
 
 def open_code_2():
   window.destroy()
-  os.system("python dreamhome_tkinter\\loginpage.py")
+  os.system("python loginpage.py")
   
 def back_button():
   window.destroy()
-  os.system("python dreamhome_tkinter\\staffinterface.py")
+  os.system("python staffinterface.py")
 
 db = mysql.connector.connect(
   host='localhost',
