@@ -5,8 +5,8 @@ def show_table():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
+        password='12345',
+        database='proj'
     )
     root.destroy()
     cursor = db.cursor()
@@ -20,7 +20,7 @@ def show_table():
             e = tk.Entry(table, width=10, fg='blue', font=('Arial', 16))
             e.grid(row=i, column=j)
             e.insert(tk.END, rows[i][j])
-    
+    print (rows);
     table.mainloop()
 
 root = tk.Tk()
