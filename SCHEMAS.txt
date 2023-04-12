@@ -1,6 +1,6 @@
 THIS IS A FILE TO MAINTAIN ALL THE SCHEMAS OF THE DIFFERENT TABLES 
 
-CLIENTS(Aayush ka source of income)
+CLIENTS
 
 create table clients (clientno varchar (10) PRIMARY KEY ,
 fname varchar (25),

@@ -36,11 +36,12 @@ def submit_data():
     postal_code_entry.delete(0, tk.END)
     owner_name_entry.delete(0, tk.END)
     owner_number_entry.delete(0, tk.END)
+    open_code_1()
     tk.messagebox.showinfo("Success", "Data submitted successfully")
 
 def open_code_1():
     root.destroy()
-    os.system("python admininterface.py")
+    os.system("python userinterface.py")
 
 root = tk.Tk()
 root.geometry("350x500")
