@@ -37,18 +37,25 @@ def submit_data():
     owner_name_entry.delete(0, tk.END)
     owner_number_entry.delete(0, tk.END)
     tk.messagebox.showinfo("Success", "Data submitted successfully")
-    
+
+def open_code_1():
+    root.destroy()
+    os.system("python main.py")
+
 root = tk.Tk()
-root.geometry("500x500")
-frame = tk.Frame(root, width=500, height=500, bg="lightgreen")
+root.geometry("350x500")
+frame = tk.Frame(root, width=350, height=500, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
 
 root.title("Property Registration")
 
+button1 = tk.Button(frame, text="Home",fg="red", command=open_code_1)
+button1.grid(row=0,column=1,columnspan=2,pady=10)
+
 property_no_label = tk.Label(frame, text="Property Number:")
-property_no_label.grid(row=0, column=1, padx=10, pady=10)
+property_no_label.grid(row=1, column=1, padx=10, pady=10)
 property_no_entry = tk.Entry(frame)
-property_no_entry.grid(row=0, column=2)
+property_no_entry.grid(row=1, column=2)
 
 property_type_label = tk.Label(frame, text="Property Type:")
 property_type_label.grid(row=2, column=1, padx=10, pady=10)
@@ -96,7 +103,7 @@ owner_number_entry = tk.Entry(frame)
 owner_number_entry.grid(row=10, column=2)
 
 submit_button = tk.Button(frame, text="Submit", command=submit_data)
-submit_button.grid(row=14, column=1, columnspan=3, padx=30, pady=45)
+submit_button.grid(row=11, column=1, columnspan=3, padx=30, pady=10)
 
 root.mainloop()
 

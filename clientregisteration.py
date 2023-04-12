@@ -18,8 +18,8 @@ def submit_data():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='12345',
-        database='proj'
+        password='Aayush@2301',
+        database='Dreamhouse'
     )
     clientno = generate_random_string(10)
     cursor = db.cursor()
@@ -35,6 +35,10 @@ def submit_data():
     tk.messagebox.showinfo("Success", "Data submitted successfully")
     clientno=""
  
+def open_code_1():
+    root.destroy()
+    os.system("python main.py")
+
 root = tk.Tk()
 root.geometry("300x300")
 frame = tk.Frame(root, width=500, height=500, bg="lightgreen")
@@ -42,31 +46,35 @@ frame.pack(fill=tk.BOTH, expand=True)
 
 root.title("Client Registration")
 
+button1 = tk.Button(frame, text="Home",fg="red", command=open_code_1)
+button1.grid(row=0,column=1,columnspan=2,pady=10)
+
 fname_label = tk.Label(frame, text="First Name:")
-fname_label.grid(row=0, column=1, padx=10, pady=10)
+fname_label.grid(row=1, column=1, padx=10, pady=10)
 fname_entry = tk.Entry(frame)
-fname_entry.grid(row=0, column=2)
+fname_entry.grid(row=1, column=2)
 
 lname_label = tk.Label(frame, text="Last Name:")
-lname_label.grid(row=1, column=1, padx=10, pady=10)
+lname_label.grid(row=2, column=1, padx=10, pady=10)
 lname_entry = tk.Entry(frame)
-lname_entry.grid(row=1, column=2)
+lname_entry.grid(row=2, column=2)
 
 telno_label = tk.Label(frame, text="Telephone Number:")
-telno_label.grid(row=2, column=1, padx=10, pady=10)
+telno_label.grid(row=3, column=1, padx=10, pady=10)
 telno_entry = tk.Entry(frame)
-telno_entry.grid(row=2, column=2)
+telno_entry.grid(row=3, column=2)
 
 email_label = tk.Label(frame, text="Email Address:")
-email_label.grid(row=3, column=1, padx=10, pady=10)
+email_label.grid(row=4, column=1, padx=10, pady=10)
 email_entry = tk.Entry(frame)
-email_entry.grid(row=3, column=2)
+email_entry.grid(row=4, column=2)
 
 null_label = tk.Label(frame, text="")
 null_label.grid(row=5, column=0)
 
 submit_button = tk.Button(frame, text="Submit", command=submit_data)
 submit_button.grid(row=6, column=1, columnspan=2)
+
 
 root.mainloop()
 
