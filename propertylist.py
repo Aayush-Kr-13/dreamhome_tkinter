@@ -1,7 +1,7 @@
 import tkinter as tk
 import mysql.connector
 
-def show_table():
+def show_table(city):
     db = mysql.connector.connect(
         host='localhost',
         user='root',
@@ -11,7 +11,7 @@ def show_table():
     root.destroy()
     cursor = db.cursor()
     
-    cursor.execute("SELECT * FROM properties")
+    cursor.execute("SELECT * FROM properties WHERE city = %s", (city,))
     rows = cursor.fetchall()
     
     table = tk.Tk()
@@ -20,7 +20,6 @@ def show_table():
             e = tk.Entry(table, width=10, fg='blue', font=('Arial', 16))
             e.grid(row=i, column=j)
             e.insert(tk.END, rows[i][j])
-    print (rows);
     table.mainloop()
 
 root = tk.Tk()
@@ -28,7 +27,13 @@ root.geometry("350x350")
 frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
 
-button = tk.Button(frame, text="Available Properties", command=show_table)
+city_label = tk.Label(frame, text="Enter city name:")
+city_label.pack(pady=10)
+
+inp_city = tk.Entry(frame)
+inp_city.pack(pady=5)
+
+button = tk.Button(frame, text="Available Properties", command=lambda: show_table(inp_city.get()))
 button.pack(pady=20)
 
 root.mainloop()
