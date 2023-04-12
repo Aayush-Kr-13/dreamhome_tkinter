@@ -13,13 +13,21 @@ def open_code_2():
 root = tk.Tk()
 root.title("Staff Interface")
 root.geometry("350x350")
-frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
+frame = tk.Frame(root, width=350, height=350, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
-button1 = tk.Button(frame, text="Verify Property", command=open_code_1)
-button2 = tk.Button(frame, text="List Property", command=open_code_2)
+large_font = ('Verdana', 15)
+large_font1 = ('Verdana', 10)
 
-button1.pack(pady=30)
-button2.pack(pady=30)
+staff_label = tk.Label(frame, text="Welcome Staff!",bg="#2C3E50",fg="Orange",font=large_font)
+staff_label.place(x=100,y=35)
+
+button1 = tk.Button(frame, text="Log Out",fg="red", command=open_code_2)
+button1.place(x=10,y=10)
+
+button1 = tk.Button(frame, text="Verify Property", command=open_code_1,bg="#1ABC9C")
+button1.place(x=130,y=140)
+button2 = tk.Button(frame, text="List Property", command=open_code_2,bg="#1ABC9C")
+button2.place(x=135,y=240)
 
 root.mainloop()

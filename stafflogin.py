@@ -5,6 +5,10 @@ import os
 def open_code_1():
     root.destroy()
     os.system("python dreamhome_tkinter\\staffinterface.py")
+    
+def open_code_2():
+    root.destroy()
+    os.system("python dreamhome_tkinter\\loginpage.py")
 
 def check_credentials():
     staffno = id_box.get()
@@ -32,21 +36,31 @@ def check_credentials():
 
 
 root = tk.Tk()
-root.geometry("350x500")
-frame = tk.Frame(root, width=350, height=500, bg="lightgreen")
+root.title("Staff Login")
+root.geometry("400x250")
+frame = tk.Frame(root, width=350, height=500, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
-id_label = tk.Label(frame, text="Enter Staff No :")
-id_label.grid(row=0, column=0, padx=10, pady=10)
-id_box = tk.Entry(frame)
-id_box.grid(row=0, column=1, padx=10, pady=10)
-lname_label = tk.Label(frame, text="Enter Last Name :")
-lname_label.grid(row=1, column=0, padx=10, pady=10)
-lname_box = tk.Entry(frame)
-lname_box.grid(row=1, column=1, padx=10, pady=10)
+large_font = ('Verdana', 15)
+large_font1 = ('Verdana', 10)
 
-button = tk.Button(frame, text="Login", command=check_credentials)
-button.grid(row=3, column=0, columnspan=3)
+button1 = tk.Button(frame, text="Back",fg="red", command=open_code_2)
+button1.place(x=10,y=10)
+
+staff_label = tk.Label(frame, text="Staff Login",bg="#2C3E50",fg="Orange",font=large_font)
+staff_label.place(x=125,y=15)
+
+id_label = tk.Label(frame, text="Enter Staff No :",bg="#2C3E50",fg="white",font=large_font1)
+id_label.place(x=50, y=80)
+id_box = tk.Entry(frame)
+id_box.place(x=200, y=80)
+lname_label = tk.Label(frame, text="Enter Last Name :",bg="#2C3E50",fg="white",font=large_font1)
+lname_label.place(x=50, y=120)
+lname_box = tk.Entry(frame)
+lname_box.place(x=200, y=120)
+
+button = tk.Button(frame, text="Login", command=check_credentials,bg="#1ABC9C")
+button.place(x=180, y=180)
 
 message = tk.Label(frame, text="")
 

@@ -28,55 +28,67 @@ def submit_data():
     branch_street_entry .delete(0, tk.END)
     branch_city_entry.delete(0, tk.END)
     branch_postal_code_entry.delete(0, tk.END)
+    root.destroy()
+    open_code_2()
     tk.messagebox.showinfo("Success", "Data submitted successfully")
 
 def open_code_1():
     root.destroy()
     os.system("python dreamhome_tkinter\\admininterface.py")
+    
+def open_code_2():
+    root.destroy()
+    os.system("python dreamhome_tkinter\\addbranch.py")
 
 root = tk.Tk()
 root.geometry("350x500")
-frame = tk.Frame(root, width=350, height=500, bg="lightgreen")
+frame = tk.Frame(root, width=350, height=500, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
+
+large_font = ('Verdana', 20)
+large_font1 = ('Verdana', 10)
 
 root.title("Property Registration")
 
-button1 = tk.Button(frame, text="Home",fg="red", command=open_code_1)
-button1.grid(row=0,column=1,columnspan=2,pady=10)
+button1 = tk.Button(frame, text="Back",fg="red", command=open_code_1)
+button1.place(x=10,y=10)
 
-branchid_label = tk.Label(frame, text="branchid:")
-branchid_label.grid(row=1, column=1, padx=10, pady=10)
+_label = tk.Label(frame, text="Add Branch",bg="#2C3E50",fg="Orange",font=large_font)
+_label.place(x=100,y=35)
+
+branchid_label = tk.Label(frame, text="branchid:",bg="#2C3E50",fg="white",font=large_font1)
+branchid_label.place(x=70,y=90)
 branchid_entry = tk.Entry(frame)
-branchid_entry.grid(row=1, column=2)
+branchid_entry.place(x=160,y=90)
 
-branchname_label = tk.Label(frame, text="Branch Name:")
-branchname_label.grid(row=2, column=1, padx=10, pady=10)
+branchname_label = tk.Label(frame, text="Branch Name:",bg="#2C3E50",fg="white",font=large_font1)
+branchname_label.place(x=50,y=150)
 branchname_entry = tk.Entry(frame)
-branchname_entry.grid(row=2, column=2)
+branchname_entry.place(x=160,y=150)
 
-branch_hno_label = tk.Label(frame, text="Branch Hno:")
-branch_hno_label.grid(row=3, column=1, padx=10, pady=10)
+branch_hno_label = tk.Label(frame, text="Branch Hno:",bg="#2C3E50",fg="white",font=large_font1)
+branch_hno_label.place(x=60,y=210)
 branch_hno_entry = tk.Entry(frame)
-branch_hno_entry.grid(row=3, column=2)
+branch_hno_entry.place(x=160,y=210)
 
-branch_street_label = tk.Label(frame, text="Branch street:")
-branch_street_label.grid(row=4, column=1, padx=10, pady=10)
+branch_street_label = tk.Label(frame, text="Branch street:",bg="#2C3E50",fg="white",font=large_font1)
+branch_street_label.place(x=50,y=270)
 branch_street_entry = tk.Entry(frame)
-branch_street_entry.grid(row=4, column=2)
+branch_street_entry.place(x=160,y=270)
 
-branch_city_label = tk.Label(frame, text="Enter City :")
-branch_city_label.grid(row=6, column=1, padx=10, pady=10)
+branch_city_label = tk.Label(frame, text="Enter City :",bg="#2C3E50",fg="white",font=large_font1)
+branch_city_label.place(x=60,y=330)
 branch_city_entry = tk.Entry(frame)
-branch_city_entry.grid(row=6, column=2)
+branch_city_entry.place(x=160,y=330)
 
-branch_postal_code_label = tk.Label(frame, text="Enter postal Code:")
-branch_postal_code_label.grid(row=7, column=1, padx=10, pady=10)
+branch_postal_code_label = tk.Label(frame, text="Enter postal Code:",bg="#2C3E50",fg="white",font=large_font1)
+branch_postal_code_label.place(x=20,y=390)
 branch_postal_code_entry = tk.Entry(frame)
-branch_postal_code_entry.grid(row=7, column=2)
+branch_postal_code_entry.place(x=160,y=390)
 
 
-submit_button = tk.Button(frame, text="Submit",fg="brown", command=submit_data)
-submit_button.grid(row=11, column=1, columnspan=3, padx=30, pady=10)
+submit_button = tk.Button(frame, text="Submit",bg="#1ABC9C", command=submit_data)
+submit_button.place(x=140, y=450)
 
 root.mainloop()
 
