@@ -37,7 +37,7 @@ def submit_data():
  
 def open_code_1():
     root.destroy()
-    os.system("python loginpage.py")
+    os.system("python dreamhome_tkinter\\loginpage.py")
 
 root = tk.Tk()
 root.geometry("300x300")

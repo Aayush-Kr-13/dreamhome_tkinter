@@ -4,7 +4,7 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python loginpage.py")
+    os.system("python staffinterface.py")
 
 def check_credentials():
     staffno = id_box.get()

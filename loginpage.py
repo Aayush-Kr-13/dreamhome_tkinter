@@ -18,6 +18,7 @@ def open_code_4():
     os.system("python dreamhome_tkinter\\clientregisteration.py")
 
 root = tk.Tk()
+root.title("Login Page")
 root.geometry("350x350")
 frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
