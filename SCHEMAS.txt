@@ -1,0 +1,67 @@
+THIS IS A FILE TO MAINTAIN ALL THE SCHEMAS OF THE DIFFERENT TABLES 
+
+CLIENTS(Aayush ka source of income)
+
+clientno varchar (10) PRIMARY KEY ,
+fname varchar (25),
+lname varchar (25), 
+telno varchar (25), 
+email varchar (25)
+
+STAFF
+
+staffno varchar (10) PRIMARY KEY ,
+fname varchar (25), 
+lname varchar (25),
+gender char (6), 
+dob varchar (25), 
+position varchar (25), 
+supervisor varchar (25),
+branch_id int,
+salary int
+
+BRANCH_DETAILS
+
+create table branches(
+branch_id varchar(255),
+branch_name varchar(255),
+branch_hno varchar(255),
+branch_street varchar(255),
+branch_city varchar(255),
+branch_postal_code varchar(255)
+);
+
+insert into branches values("000001","VIDYANAGAR_BRANCH","AI-77","WARRINGTON STREET","HUBLI","581119"),
+("000002","COURT_CIRCLE_BRANCH","AI-77","COURT STREET","DHARWAD","581121"),
+("000003","PARK_CIRCUS_BRANCH","AI-77","PARK STREET","KOLKATA","700019"),
+("000004","CIRCUS_MAIDAN_BRANCH","AI-77","CIRCUS MAIDAN","KATWA","680009"),
+("000005","GLASGOW_BRANCH_1","23_10u_70","WARRINGTON STREET","GLASGOW","900119");
+insert into branches values("000006","GLASGOW_BRANCH_2","23_10u_70","WARRINGTON STREET","GLASGOW","900200");
+
+
+QUERIES:
+
+1>SELECT * FROM BRANCH_DETAILS;
+2>SELECT T.BRANCH_CITY,COUNT(T.BRANCH_CITY)
+FROM BRANCHES T
+GROUP BY T.BRANCH_CITY;
+
+3>select fname,position,salary from staffs order by fname;
+
+4>select count(staffno),sum(salary) from staffs;
+
+5>SELECT position, COUNT(*) as total_staff
+FROM staffs
+WHERE branch_id IN (
+    SELECT branch_id FROM branches WHERE branch_city = 'Glasgow'
+)
+GROUP BY position;
+
+6>SELECT A.FNAME AS FNAME,A.LNAME as LNAME ,B.branch_city
+FROM STAFFS A,BRANCHES B
+WHERE A.BRANCH_ID=B.BRANCH_ID AND A.POSITION="MANAGER"
+ORDER BY B.BRANCH_CITY;
+
+7>SELECT A.FNAME AS FNAME,A.LNAME as LNAME,A.supervisor
+FROM STAFFS A
+WHERE A.SUPERVISOR="Someone";
