@@ -11,7 +11,7 @@ def show_table():
     root.destroy()
     cursor = db.cursor()
     
-    cursor.execute("SELECT * FROM properties")
+    cursor.execute("SELECT * FROM branches")
     rows = cursor.fetchall()
     
     table = tk.Tk()
@@ -28,7 +28,7 @@ root.geometry("350x350")
 frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
 frame.pack(fill=tk.BOTH, expand=True)
 
-button = tk.Button(frame, text="Available Properties", command=show_table)
+button = tk.Button(frame, text="Branch List", command=show_table)
 button.pack(pady=20)
 
 root.mainloop()
