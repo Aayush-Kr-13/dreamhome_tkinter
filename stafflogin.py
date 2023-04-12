@@ -4,7 +4,7 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python propertyverifier.py")
+    os.system("python loginpage.py")
 
 def check_credentials():
     staffno = id_box.get()
@@ -13,8 +13,8 @@ def check_credentials():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='12345',
-        database='proj'
+        password='Aayush@2301',
+        database='Dreamhouse'
     )
     
     cursor = db.cursor()

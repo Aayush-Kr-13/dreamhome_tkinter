@@ -22,8 +22,8 @@ def submit_data():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='12345',
-        database='proj'
+        password='Aayush@2301',
+        database='Dreamhouse'
     )
     staffno = generate_random_string(10)
     cursor = db.cursor()
@@ -45,7 +45,7 @@ def submit_data():
 
 def open_code_1():
     root.destroy()
-    os.system("python main.py")
+    os.system("python admininterface.py")
    
 root = tk.Tk()
 root.title("Staff Registration")

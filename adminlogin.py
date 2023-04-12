@@ -4,7 +4,7 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\main.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
 
 def check_credentials():
     admin_id = admin_id_box.get()
