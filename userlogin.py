@@ -4,7 +4,7 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\main.py")
+    os.system("python main.py")
 
 def check_credentials():
     clientno = id_box.get()
@@ -13,8 +13,8 @@ def check_credentials():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
+        password='12345',
+        database='proj'
     )
     
     cursor = db.cursor()
