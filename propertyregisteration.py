@@ -17,8 +17,8 @@ def submit_data():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
+        password='12345',
+        database='proj'
     )
     cursor = db.cursor()
     sql = "INSERT INTO properties (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_number) VALUES (%s, %s, %s, %s,%s,%s, %s, %s, %s,%s)"
