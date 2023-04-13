@@ -18,8 +18,8 @@ def submit_data():
     db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
+        password='12345',
+        database='proj'
     )
     clientno = generate_random_string(10)
     cursor = db.cursor()
