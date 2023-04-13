@@ -23,8 +23,9 @@ def show_table(city):
     table.mainloop()
 
 root = tk.Tk()
+root.title("Property List")
 root.geometry("350x350")
-frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
+frame = tk.Frame(root, width=350, height=350, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
 city_label = tk.Label(frame, text="Enter city name:")

@@ -3,19 +3,19 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python userlogin.py")
+    os.system("python dreamhome_tkinter\\userlogin.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python stafflogin.py")
+    os.system("python dreamhome_tkinter\\stafflogin.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python adminlogin.py")
+    os.system("python dreamhome_tkinter\\adminlogin.py")
     
 def open_code_4():
     root.destroy()
-    os.system("python clientregisteration.py")
+    os.system("python dreamhome_tkinter\\clientregisteration.py")
 
 root = tk.Tk()
 root.title("Login Page")

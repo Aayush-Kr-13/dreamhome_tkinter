@@ -34,11 +34,11 @@ def submit_data():
 
 def open_code_1():
     root.destroy()
-    os.system("python admininterface.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
     
 def open_code_2():
     root.destroy()
-    os.system("python addbranch.py")
+    os.system("python dreamhome_tkinter\\addbranch.py")
 
 root = tk.Tk()
 root.geometry("350x500")

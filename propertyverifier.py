@@ -2,19 +2,13 @@ import tkinter as tk
 import mysql.connector
 import os
 
-def open_code_1():
-  verify_button.config(background="Green")
-  verify_button.config(background="Green")
-  window.destroy()
-  os.system("python propertyverifier.py")
-
 def open_code_2():
   window.destroy()
-  os.system("python loginpage.py")
+  os.system("python dreamhome_tkinter\\loginpage.py")
   
 def back_button():
   window.destroy()
-  os.system("python staffinterface.py")
+  os.system("python dreamhome_tkinter\\staffinterface.py")
 
 db = mysql.connector.connect(
   host='localhost',
@@ -34,10 +28,11 @@ def verify_property():
   property_number_entry.delete(0, 'end')
   fullName_entry.delete(0, 'end')
   if cursor.rowcount > 0:
-    result_label.config(text="Property verified")
-    open_code_1()
+    success_label = tk.Label(window, text="Property Verified!")
+    success_label.place(x=150, y=220)
   else:
-    result_label.config(text="Property not found")
+    error_label = tk.Label(window, text="Property Not Found",bg="red")
+    error_label.place(x=150, y=220)
 
 
 window = tk.Tk()

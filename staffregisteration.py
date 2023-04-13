@@ -40,12 +40,15 @@ def submit_data():
     supervisor_entry.delete(0, tk.END)
     branch_entry.delete(0, tk.END)
     salary_entry.delete(0, tk.END)
-    tk.messagebox.showinfo("Success", "Data submitted successfully")
+    success_label = tk.Label(root, text="Registrartion Successful!",bg="lightgreen")
+    success_label.place(x=150, y=150)
+    clientid_label = tk.Label(root, text="Your Staff Id is :" +staffno)
+    clientid_label.place(x=110, y=340)
     staffno=""
 
 def open_code_1():
     root.destroy()
-    os.system("python admininterface.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
    
 root = tk.Tk()
 root.title("Staff Registration")

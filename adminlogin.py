@@ -4,11 +4,11 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python admininterface.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
     
 def open_code_2():
     root.destroy()
-    os.system("python loginpage.py")
+    os.system("python dreamhome_tkinter\\loginpage.py")
 
 
 def check_credentials():
@@ -29,11 +29,13 @@ def check_credentials():
     row = cursor.fetchone()
     
     if row:
-        message.config(text="Login Successful", fg="green")
+        success_label = tk.Label(root, text="Login successful!",bg="lightgreen")
+        success_label.place(x=150, y=150)
         open_code_1()
         root.destroy()
     else:
-        message.config(text="Invalid User ID or Email", fg="red")
+        error_label = tk.Label(root, text="Invalid username or password.",bg="red")
+        error_label.place(x=150, y=150)
 
 
 root = tk.Tk()
