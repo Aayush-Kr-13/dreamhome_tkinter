@@ -3,23 +3,23 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python addbranch.py")
+    os.system("python dreamhome_tkinter\\addbranch.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python propertylist.py")
+    os.system("python dreamhome_tkinter\\propertylist.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python branchlist.py")
+    os.system("python dreamhome_tkinter\\branchlist.py")
     
 def open_code_4():
     root.destroy()
-    os.system("python staffregisteration.py")
+    os.system("python dreamhome_tkinter\\staffregisteration.py")
     
 def open_code_5():
     root.destroy()
-    os.system("python loginpage.py")
+    os.system("python dreamhome_tkinter\\loginpage.py")
     
 
 root = tk.Tk()
@@ -30,11 +30,11 @@ frame.pack(fill=tk.BOTH, expand=True)
 button1 = tk.Button(frame, text="Log Out",fg="red", command=open_code_5)
 button1.place(x=10,y=10)
 
-large_font = ('Verdana', 20)
+large_font = ('Verdana', 25)
 large_font1 = ('Verdana', 10)
 
 admin_label = tk.Label(frame, text="Welcome Admin!",bg="#2C3E50",fg="Orange",font=large_font)
-admin_label.place(x=100,y=35)
+admin_label.place(x=70,y=45)
 
 button1 = tk.Button(frame, text="Add Branch", command=open_code_1)
 button1.place(x=160,y=130)

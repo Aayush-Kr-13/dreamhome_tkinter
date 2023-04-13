@@ -40,65 +40,74 @@ def submit_data():
     supervisor_entry.delete(0, tk.END)
     branch_entry.delete(0, tk.END)
     salary_entry.delete(0, tk.END)
-    tk.messagebox.showinfo("Success", "Data submitted successfully")
+    success_label = tk.Label(root, text="Registrartion Successful!",bg="lightgreen")
+    success_label.place(x=150, y=500)
+    clientid_label = tk.Label(root, text="Your Staff Id is :" +staffno)
+    clientid_label.place(x=150, y=530)
     staffno=""
 
 def open_code_1():
     root.destroy()
-    os.system("python admininterface.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
    
 root = tk.Tk()
 root.title("Staff Registration")
 
-root.geometry("330x500")
-frame = tk.Frame(root, width=330, height=500, bg="lightgreen")
+root.geometry("400x600")
+frame = tk.Frame(root, width=400, height=600, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
-button1 = tk.Button(frame, text="Home",fg="red", command=open_code_1)
-button1.grid(row=0,column=1,columnspan=2,pady=10)
+large_font = ('Verdana', 19)
+large_font1 = ('Verdana', 10)
+
+user_label = tk.Label(frame, text="Staff Registration",bg="#2C3E50",fg="Orange",font=large_font)
+user_label.place(x=70,y=35)
+
+button1 = tk.Button(frame, text="Back",fg="red", command=open_code_1)
+button1.place(x=10,y=10)
 
 fname_label = tk.Label(frame, text="First Name:")
-fname_label.grid(row=1, column=1, padx=20, pady=15)
+fname_label.place(x=40,y=100)
 fname_entry = tk.Entry(frame)
-fname_entry.grid(row=1, column=2)
+fname_entry.place(x=180,y=100)
 
 lname_label = tk.Label(frame, text="Last Name:")
-lname_label.grid(row=2, column=1, padx=20, pady=15)
+lname_label.place(x=40,y=150)
 lname_entry = tk.Entry(frame)
-lname_entry.grid(row=2, column=2)
+lname_entry.place(x=180,y=150)
 
 gender_label = tk.Label(frame, text="Gender:")
-gender_label.grid(row=3, column=1, padx=20, pady=15)
+gender_label.place(x=40,y=200)
 gender_entry = tk.Entry(frame)
-gender_entry.grid(row=3, column=2)
+gender_entry.place(x=180,y=200)
 
 dob_label = tk.Label(frame, text="DOB:")
-dob_label.grid(row=4, column=1, padx=20, pady=15)
+dob_label.place(x=40,y=250)
 dob_entry = tk.Entry(frame)
-dob_entry.grid(row=4, column=2)
+dob_entry.place(x=180,y=250)
 
 position_label = tk.Label(frame, text="Position:")
-position_label.grid(row=5, column=1, padx=20, pady=15)
+position_label.place(x=40,y=300)
 position_entry=tk.Entry(frame)
-position_entry.grid(row=5, column = 2)
+position_entry.place(x=180,y=300)
 
 supervisor_label = tk.Label(frame, text="Supervisor:")
-supervisor_label.grid(row=6, column=1, padx=20, pady=15)
+supervisor_label.place(x=40,y=350)
 supervisor_entry = tk.Entry(frame)
-supervisor_entry.grid(row=6 , column=2)
+supervisor_entry.place(x=180,y=350)
 
 branch_label = tk.Label(frame, text="Branch_id:")
-branch_label.grid(row=7, column=1, padx=20, pady=15)
+branch_label.place(x=40,y=400)
 branch_entry = tk.Entry(frame)
-branch_entry.grid(row=7 , column=2)
+branch_entry.place(x=180,y=400)
 
 salary_label = tk.Label(frame, text="Salary:")
-salary_label.grid(row=8, column=1, padx=20, pady=15)
+salary_label.place(x=40,y=450)
 salary_entry = tk.Entry(frame)
-salary_entry.grid(row=8 , column=2)
+salary_entry.place(x=180,y=450)
 
-submit_button = tk.Button(frame, text="Submit",fg="brown", command=submit_data)
-submit_button.grid(row=9, column=1, columnspan=2,padx=20, pady=10)
+submit_button = tk.Button(frame, text="Submit",bg="#1ABC9C", command=submit_data)
+submit_button.place(x=150,y=560)
 
 root.mainloop()
 

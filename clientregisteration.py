@@ -32,16 +32,19 @@ def submit_data():
     lname_entry.delete(0, tk.END)
     telno_entry.delete(0, tk.END)
     email_entry.delete(0, tk.END)
-    tk.messagebox.showinfo("Success", "Data submitted successfully")
+    success_label = tk.Label(root, text="Registration Successful!",bg="lightgreen")
+    success_label.place(x=130, y=6)
+    clientid_label = tk.Label(root, text="Your Client Id is :" +clientno)
+    clientid_label.place(x=110, y=340)
     clientno=""
  
 def open_code_1():
     root.destroy()
-    os.system("python loginpage.py")
+    os.system("python dreamhome_tkinter\\loginpage.py")
 
 root = tk.Tk()
 root.title("User Registeration")
-root.geometry("400x380")
+root.geometry("400x420")
 frame = tk.Frame(root, width=500, height=500, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
@@ -76,7 +79,7 @@ email_entry.place(x=200, y=290)
 
 
 submit_button = tk.Button(frame, text="Submit",bg="#1ABC9C", command=submit_data)
-submit_button.place(x=150,y=335)
+submit_button.place(x=150,y=375)
 
 
 root.mainloop()

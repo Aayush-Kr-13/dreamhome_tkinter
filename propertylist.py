@@ -1,39 +1,70 @@
 import tkinter as tk
 import mysql.connector
+from tkinter import ttk
+import os
 
-def show_table(city):
-    db = mysql.connector.connect(
+def open_code_1():
+    root.destroy()
+    os.system("python dreamhome_tkinter\\userInterface.py")
+
+db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='12345',
-        database='proj'
+        password='Aayush@2301',
+        database='Dreamhouse'
     )
     root.destroy()
     cursor = db.cursor()
-    
-    cursor.execute("SELECT * FROM properties WHERE city = %s", (city,))
-    rows = cursor.fetchall()
-    
-    table = tk.Tk()
-    for i in range(len(rows)):
-        for j in range(len(rows[i])):
-            e = tk.Entry(table, width=10, fg='blue', font=('Arial', 16))
-            e.grid(row=i, column=j)
-            e.insert(tk.END, rows[i][j])
-    table.mainloop()
+    cursor.execute("SELECT * FROM properties")
+    data = cursor.fetchall()
+    for row in data:
+        tree.insert("", "end", values=row)
 
 root = tk.Tk()
-root.geometry("350x350")
-frame = tk.Frame(root, width=350, height=350, bg="lightgreen")
+root.title("Property List")
+root.geometry("1400x600")
+frame = tk.Frame(root, width=1400, height=600, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
-city_label = tk.Label(frame, text="Enter city name:")
-city_label.pack(pady=10)
+large_font = ('Verdana', 15)
 
-inp_city = tk.Entry(frame)
-inp_city.pack(pady=5)
+button1 = tk.Button(frame, text="Back",fg="red", command=open_code_1)
+button1.place(x=5,y=3)
 
-button = tk.Button(frame, text="Available Properties", command=lambda: show_table(inp_city.get()))
-button.pack(pady=20)
+user_label = tk.Label(frame, text="Property List",bg="#2C3E50",fg="Orange",font=large_font)
+user_label.pack()
+
+
+tree = ttk.Treeview(frame)
+tree.pack(fill="both", expand=True)
+
+tree["columns"] = ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven")
+
+tree.heading("one", text="Property No")
+tree.heading("two", text="Property Type")
+tree.heading("three", text="Rooms")
+tree.heading("four", text="Rent")
+tree.heading("five", text="Address Hno")
+tree.heading("six", text="Address Street")
+tree.heading("seven", text="City")
+tree.heading("eight", text="Postal Code")
+tree.heading("nine", text="Owner Name")
+tree.heading("ten", text="Owner Number")
+tree.heading("eleven", text="Verified")
+
+tree.column("one", width=100)
+tree.column("two", width=100)
+tree.column("three", width=100)
+tree.column("four", width=100)
+tree.column("five", width=100)
+tree.column("six", width=100)
+tree.column("seven", width=100)
+tree.column("eight", width=100)
+tree.column("nine", width=100)
+tree.column("ten", width=100)
+tree.column("eleven", width=100)
+
+display_button = tk.Button(frame, text="Display Properties", command=display_table,bg="#1ABC9C")
+display_button.pack()
 
 root.mainloop()
