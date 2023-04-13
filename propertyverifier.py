@@ -11,10 +11,10 @@ def back_button():
   os.system("python dreamhome_tkinter\\staffinterface.py")
 
 db = mysql.connector.connect(
-  host='localhost',
-  user='root',
-  password='12345',
-  database='proj'
+    host='localhost',
+    user='root',
+    password='Aayush@2301',
+    database='Dreamhouse'
 )
 
 cursor = db.cursor()

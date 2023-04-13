@@ -12,8 +12,9 @@ db = mysql.connector.connect(
         user='root',
         password='Aayush@2301',
         database='Dreamhouse'
-    )
-    root.destroy()
+)
+def display_table():
+    tree.delete(*tree.get_children())
     cursor = db.cursor()
     cursor.execute("SELECT * FROM properties")
     data = cursor.fetchall()
