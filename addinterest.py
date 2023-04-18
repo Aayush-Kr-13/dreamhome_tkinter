@@ -4,7 +4,7 @@ import os
 
 def open_code_2():
   root.destroy()
-  os.system("python dreamhome_tkinter\\loginpage.py")
+  os.system("python dreamhome_tkinter\\userInterface.py")
 
 mydb = mysql.connector.connect(
     host='localhost',
@@ -52,13 +52,13 @@ frame.pack(fill=tk.BOTH, expand=True)
 large_font = ('Verdana', 20)
 large_font1 = ('Verdana', 10)
 
-button1 = tk.Button(frame, text="Log Out",fg="red", command=open_code_2)
+button1 = tk.Button(frame, text="Back",fg="red", command=open_code_2)
 button1.place(x=5,y=5)
 
-staff_label = tk.Label(frame, text="Verify Property!",bg="#2C3E50",fg="Orange",font=large_font)
+staff_label = tk.Label(frame, text="Add Interest",bg="#2C3E50",fg="Orange",font=large_font)
 staff_label.place(x=75,y=35)
 
-client_id_label = tk.Label(root, text="Client ID:",bg="#2C3E50",fg="white",font=large_font1)
+client_id_label = tk.Label(root, text="User ID:",bg="#2C3E50",fg="white",font=large_font1)
 client_id_label.place(x=40,y=100)
 client_id_entry = tk.Entry(root)
 client_id_entry.place(x=180,y=100)

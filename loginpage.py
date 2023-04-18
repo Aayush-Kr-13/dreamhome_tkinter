@@ -18,16 +18,16 @@ def open_code_4():
     os.system("python dreamhome_tkinter\\clientregisteration.py")
 
 root = tk.Tk()
-root.title("Login Page")
+root.title("Main Page")
 root.geometry("400x380")
 frame = tk.Frame(root, width=350, height=500, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
-large_font = ('Verdana', 15)
-large_font1 = ('Verdana', 10)
+large_font = ('Verdana', 25)
+large_font1 = ('Verdana', 12)
 
-login_label = tk.Label(frame, text="Which Login?",bg="#2C3E50",fg="Orange",font=large_font)
-login_label.place(x=125,y=15)
+login_label = tk.Label(frame, text="Dreamhome",bg="#2C3E50",fg="Orange",font=large_font)
+login_label.place(x=100,y=15)
 
 button1 = tk.Button(frame, text="User Login", command=open_code_1,font=large_font1)
 button1.place(x=150,y=105)
