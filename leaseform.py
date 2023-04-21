@@ -4,7 +4,6 @@ import random
 import string
 import os
 
-
 def generate_random_string(length):
     all_chars = list(string.digits + string.ascii_letters.upper())
     random.shuffle(all_chars)
@@ -57,7 +56,7 @@ def delete_property():
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\staffnterface.py")
+    os.system("python dreamhome_tkinter\\staffinterface.py")
    
 root = tk.Tk()
 root.title("Lease Form")

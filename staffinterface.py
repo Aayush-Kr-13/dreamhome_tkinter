@@ -9,6 +9,13 @@ def open_code_2():
     root.destroy()
     os.system("python dreamhome_tkinter\\propertylist.py")
     
+def open_code_3():
+    root.destroy()
+    os.system("python dreamhome_tkinter\\leaseform.py")
+
+def open_code_4():
+    root.destroy()
+    os.system("python dreamhome_tkinter\\loginpage.py")  
 
 root = tk.Tk()
 root.title("Staff Interface")
@@ -22,12 +29,14 @@ large_font1 = ('Verdana', 10)
 staff_label = tk.Label(frame, text="Welcome Staff!",bg="#2C3E50",fg="Orange",font=large_font)
 staff_label.place(x=100,y=35)
 
-button1 = tk.Button(frame, text="Log Out",fg="red", command=open_code_2)
+button1 = tk.Button(frame, text="Log Out",fg="red", command=open_code_4)
 button1.place(x=10,y=10)
 
 button1 = tk.Button(frame, text="Verify Property", command=open_code_1,bg="#1ABC9C")
-button1.place(x=130,y=140)
+button1.place(x=130,y=120)
 button2 = tk.Button(frame, text="List Property", command=open_code_2,bg="#1ABC9C")
-button2.place(x=135,y=240)
+button2.place(x=135,y=200)
+button3 = tk.Button(frame, text="Lease Form", command=open_code_3,bg="#1ABC9C")
+button3.place(x=135,y=280)
 
 root.mainloop()
