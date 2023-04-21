@@ -2,9 +2,16 @@ import tkinter as tk
 import mysql.connector
 import string
 import os
+import random
+
+def generate_random_string(length):
+    all_chars = list(string.digits + string.ascii_letters.upper())
+    random.shuffle(all_chars)
+    random_chars = random.sample(all_chars, length)
+    return ''.join(random_chars)
 
 def submit_data():
-    branch_id = branchid_entry.get()
+    branch_id = generate_random_string(6)
     branch_name = branchname_entry.get()
     branch_hno = branch_hno_entry.get()
     branch_street = branch_street_entry.get()
@@ -22,7 +29,6 @@ def submit_data():
     cursor.execute(sql, values)
     db.commit()
     db.close()
-    branchid_entry.delete(0, tk.END)
     branchname_entry.delete(0, tk.END)
     branch_hno_entry.delete(0, tk.END)
     branch_street_entry .delete(0, tk.END)
@@ -56,35 +62,30 @@ button1.place(x=10,y=10)
 _label = tk.Label(frame, text="Add Branch",bg="#2C3E50",fg="Orange",font=large_font)
 _label.place(x=100,y=35)
 
-branchid_label = tk.Label(frame, text="branchid:",bg="#2C3E50",fg="white",font=large_font1)
-branchid_label.place(x=70,y=90)
-branchid_entry = tk.Entry(frame)
-branchid_entry.place(x=160,y=90)
-
 branchname_label = tk.Label(frame, text="Branch Name:",bg="#2C3E50",fg="white",font=large_font1)
-branchname_label.place(x=50,y=150)
+branchname_label.place(x=30,y=120)
 branchname_entry = tk.Entry(frame)
-branchname_entry.place(x=160,y=150)
+branchname_entry.place(x=160,y=120)
 
 branch_hno_label = tk.Label(frame, text="Branch Hno:",bg="#2C3E50",fg="white",font=large_font1)
-branch_hno_label.place(x=60,y=210)
+branch_hno_label.place(x=30,y=180)
 branch_hno_entry = tk.Entry(frame)
-branch_hno_entry.place(x=160,y=210)
+branch_hno_entry.place(x=160,y=180)
 
 branch_street_label = tk.Label(frame, text="Branch street:",bg="#2C3E50",fg="white",font=large_font1)
-branch_street_label.place(x=50,y=270)
+branch_street_label.place(x=30,y=240)
 branch_street_entry = tk.Entry(frame)
-branch_street_entry.place(x=160,y=270)
+branch_street_entry.place(x=160,y=240)
 
 branch_city_label = tk.Label(frame, text="Enter City :",bg="#2C3E50",fg="white",font=large_font1)
-branch_city_label.place(x=60,y=330)
+branch_city_label.place(x=30,y=300)
 branch_city_entry = tk.Entry(frame)
-branch_city_entry.place(x=160,y=330)
+branch_city_entry.place(x=160,y=300)
 
 branch_postal_code_label = tk.Label(frame, text="Enter postal Code:",bg="#2C3E50",fg="white",font=large_font1)
-branch_postal_code_label.place(x=20,y=390)
+branch_postal_code_label.place(x=20,y=360)
 branch_postal_code_entry = tk.Entry(frame)
-branch_postal_code_entry.place(x=160,y=390)
+branch_postal_code_entry.place(x=160,y=360)
 
 
 submit_button = tk.Button(frame, text="Submit",bg="#1ABC9C", command=submit_data)

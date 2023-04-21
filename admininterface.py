@@ -7,7 +7,7 @@ def open_code_1():
 
 def open_code_2():
     root.destroy()
-    os.system("python dreamhome_tkinter\\propertylist.py")
+    os.system("python dreamhome_tkinter\\propertylista.py")
     
 def open_code_3():
     root.destroy()
