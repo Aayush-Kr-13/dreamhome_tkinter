@@ -63,6 +63,15 @@ owner_ph_no varchar(255),
 client_ph_no varchar(255)
 );
 
+Lease Form:
+create table lease(
+lease_id varchar (15) PRIMARY KEY,
+owner_id varchar (15),
+client_id varchar (15),
+property_no varchar (10),
+city varchar (25)
+);
+
 QUERIES:
 
 1>SELECT * FROM BRANCH_DETAILS;
