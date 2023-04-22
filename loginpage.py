@@ -19,7 +19,7 @@ def open_code_4():
 
 root = tk.Tk()
 root.title("Main Page")
-root.geometry("400x380")
+root.geometry("400x400")
 frame = tk.Frame(root, width=350, height=500, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
@@ -27,16 +27,16 @@ large_font = ('Verdana', 25)
 large_font1 = ('Verdana', 12)
 
 login_label = tk.Label(frame, text="Dreamhome",bg="#2C3E50",fg="Orange",font=large_font)
-login_label.place(x=100,y=15)
+login_label.place(x=100,y=35)
 
 button1 = tk.Button(frame, text="User Login", command=open_code_1,font=large_font1)
-button1.place(x=150,y=105)
+button1.place(x=50,y=155)
 button2 = tk.Button(frame, text="Staff Login", command=open_code_2,font=large_font1)
-button2.place(x=145,y=175)
+button2.place(x=245,y=155)
 button3 = tk.Button(frame, text="Admin Login", command=open_code_3,font=large_font1)
-button3.place(x=145,y=245)
+button3.place(x=40,y=275)
 button4 = tk.Button(frame, text="User Registeration", command=open_code_4,font=large_font1)
-button4.place(x=125,y=315)
+button4.place(x=215,y=275)
 
 
 root.mainloop()
