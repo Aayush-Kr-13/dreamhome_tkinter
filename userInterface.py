@@ -12,26 +12,37 @@ def open_code_2():
 def open_code_3():
     root.destroy()
     os.system("python loginpage.py")
+    
+def open_code_4():
+    root.destroy()
+    os.system("python checkinterest.py")
+
+def open_code_5():
+    root.destroy()
+    os.system("python dreamhome_tkinter\\addinterest.py")
 
 root = tk.Tk()
 root.title("Interface")
-root.geometry("350x350")
-frame = tk.Frame(root, width=350, height=350, bg="#2C3E50")
+root.geometry("400x400")
+frame = tk.Frame(root, width=400, height=400, bg="#2C3E50")
 frame.pack(fill=tk.BOTH, expand=True)
 
-large_font = ('Verdana', 30)
+large_font = ('Verdana', 20)
 large_font1 = ('Verdana', 12)
 
 button1 = tk.Button(frame, text="Log Out",fg="red", command=open_code_3)
 button1.place(x=10,y=10)
 
 admin_label = tk.Label(frame, text="Welcome User!",bg="#2C3E50",fg="Orange",font=large_font)
-admin_label.place(x=25,y=45)
+admin_label.place(x=80,y=45)
 
-button1 = tk.Button(frame, text="Register Property", command=open_code_1,font=large_font1)
-button1.place(x=90, y=140)
-button2 = tk.Button(frame, text="Search For Property", command=open_code_2,font=large_font1)
-button2.place(x=85,y=260)
-
+button1 = tk.Button(frame, text="Register Property", command=open_code_1,font=large_font1,bg="#1ABC9C")
+button1.place(x=105, y=130)
+button2 = tk.Button(frame, text="Search For Property", command=open_code_2,font=large_font1,bg="#1ABC9C")
+button2.place(x=95,y=200)
+button3 = tk.Button(frame, text="Check For Interest", command=open_code_4,font=large_font1,bg="#1ABC9C")
+button3.place(x=95,y=280)
+button4 = tk.Button(frame, text="Add Interest", command=open_code_5,font=large_font1,bg="#1ABC9C")
+button4.place(x=115,y=360)
 
 root.mainloop()

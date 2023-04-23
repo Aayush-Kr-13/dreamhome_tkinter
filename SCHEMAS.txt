@@ -25,7 +25,7 @@ salary numeric
 BRANCH_DETAILS
 
 create table branches(
-branch_id varchar(255),
+branch_id varchar(255) PRIMARY KEY,
 branch_name varchar(255),
 branch_hno varchar(255),
 branch_street varchar(255),
@@ -40,8 +40,6 @@ insert into branches values("000001","VIDYANAGAR_BRANCH","AI-77","WARRINGTON STR
 ("000005","GLASGOW_BRANCH_1","23_10u_70","WARRINGTON STREET","GLASGOW","900119");
 insert into branches values("000006","GLASGOW_BRANCH_2","23_10u_70","WARRINGTON STREET","GLASGOW","900200");
 
-
-
 Properties
 
 create table properties (
@@ -55,6 +53,24 @@ city varchar (15), postal_code varchar (10),
 owner_name varchar (25), 
 owner_number varchar (25));
 alter table properties add verificiation bool default false;
+
+Interests:
+create table interests(
+owner_no varchar(255),
+client_no varchar(255),
+property_no varchar(10),
+owner_ph_no varchar(255),
+client_ph_no varchar(255)
+);
+
+Lease Form:
+create table lease(
+lease_id varchar (15) PRIMARY KEY,
+owner_id varchar (15),
+client_id varchar (15),
+property_no varchar (10),
+city varchar (25)
+);
 
 QUERIES:
 

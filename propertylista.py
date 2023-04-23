@@ -5,13 +5,13 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python userInterface.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
 
 db = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='12345',
-        database='proj'
+        password='Aayush@2301',
+        database='Dreamhouse'
 )
 
 def display_table1():
@@ -30,8 +30,8 @@ def display_table():
     property_id = property_id_entry.get()
     tree.delete(*tree.get_children())
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s"
-    mycursor.execute(sql, (city_id))
+    sql = "SELECT * FROM properties WHERE city = %s and property_no = %s"
+    mycursor.execute(sql, (city_id,property_id))
     data = mycursor.fetchall()
     for row in data:
         tree.insert("", "end", values=row)
@@ -42,8 +42,8 @@ def search_database():
     city_id = city_id_entry.get()
     property_id = property_id_entry.get()
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s"
-    mycursor.execute(sql, (city_id))
+    sql = "SELECT * FROM properties WHERE city = %s and property_no = %s"
+    mycursor.execute(sql, (city_id,property_id))
     data = mycursor.fetchall()
     if len(data) > 0:
         success_label = tk.Label(root, text="Property Found!",bg="lightgreen")
