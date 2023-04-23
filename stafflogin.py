@@ -1,5 +1,5 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 import os
 
 def open_code_1():
@@ -13,14 +13,6 @@ def open_code_2():
 def check_credentials():
     staffno = id_box.get()
     lname = lname_box.get()
-    
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
-    
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM staffs WHERE staffno = %s AND lname = %s", (staffno, lname))

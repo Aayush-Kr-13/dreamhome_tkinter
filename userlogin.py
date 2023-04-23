@@ -1,5 +1,5 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 import os
 
 def open_code_1():
@@ -13,14 +13,6 @@ def open_code_2():
 def check_credentials():
     clientno = id_box.get()
     email = email_box.get()
-    
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
-    
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM clients WHERE clientno = %s AND email = %s", (clientno, email))

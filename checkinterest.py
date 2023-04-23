@@ -1,7 +1,7 @@
 import tkinter as tk
-import mysql.connector
 from tkinter import ttk
 import os
+from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
@@ -10,13 +10,6 @@ def open_code_1():
 def open_code_2():
     root.destroy()
     os.system("python dreamhome_tkinter\\checkinterest.py")
-
-db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-)
 
 def display_table():
     client_id = client_id_entry.get()

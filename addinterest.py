@@ -1,24 +1,18 @@
 import tkinter as tk
 import mysql.connector
 import os
+from tempCodeRunnerFile import db
 
 def open_code_2():
   root.destroy()
   os.system("python dreamhome_tkinter\\userInterface.py")
-
-mydb = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Aayush@2301',
-    database='Dreamhouse'
-)
 
 def search_database():
     client_id = client_id_entry.get()
     last_name = last_name_entry.get()
     property_no = property_no_entry.get()
     
-    mycursor = mydb.cursor()
+    mycursor = db.cursor()
     mycursor.execute("SELECT * FROM clients WHERE lname = %s and clientno=%s", (last_name,client_id))
     client = mycursor.fetchone()
     
@@ -32,8 +26,8 @@ def search_database():
             mycursor.execute("SELECT clientno FROM clients WHERE telno = %s", (owner_ph_no,))
             owner_no = mycursor.fetchone()[0]
             mycursor.execute("INSERT INTO INTERESTS(owner_no,client_no,property_no,owner_ph_no,client_ph_no) VALUES(%s,%s,%s,%s,%s)", (owner_no,client_id,property_no,owner_ph_no,client_ph_no))
-            mydb.commit()
-            mydb.close()
+            db.commit()
+            db.close()
             success_label = tk.Label(root, text="Registration Successful!",bg="lightgreen")
             success_label.place(x=130, y=260)
         else:

@@ -1,8 +1,8 @@
 import tkinter as tk
-import mysql.connector
 import random
 import string
 import os
+from tempCodeRunnerFile import db
 
 def generate_random_string(length):
     all_chars = list(string.digits + string.ascii_letters.upper())
@@ -39,12 +39,6 @@ def submit_data():
 def delete_property():
     property = property_entry.get()
     city = city_entry.get()
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
     mycursor = db.cursor()
     sql = "DELETE FROM properties WHERE property_no = %s and city = %s;"
     values = (property,city)

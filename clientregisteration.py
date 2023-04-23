@@ -3,6 +3,7 @@ import mysql.connector
 import random
 import string
 import os
+from usermail import send_mail
 
 def generate_random_string(length):
     all_chars = list(string.digits + string.ascii_letters.upper())
@@ -28,6 +29,7 @@ def submit_data():
     cursor.execute(sql, values)
     db.commit()
     db.close()
+    send_mail(email,fname,clientno)
     fname_entry.delete(0, tk.END)
     lname_entry.delete(0, tk.END)
     telno_entry.delete(0, tk.END)
