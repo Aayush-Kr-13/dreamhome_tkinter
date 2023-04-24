@@ -13,7 +13,7 @@ def send_mail(mail,user,id):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
 
-    email_password = "sqfaxabhuegblwzw"
+    email_password = "skvftmquyxfzrdsal"
     server.login(from_email, email_password)
 
     email_message = f'Subject: {subject}\n\n{message}'

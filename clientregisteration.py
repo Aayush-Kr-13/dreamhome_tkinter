@@ -1,5 +1,5 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 import random
 import string
 import os
@@ -16,12 +16,6 @@ def submit_data():
     lname = lname_entry.get()
     telno = telno_entry.get()
     email = email_entry.get()
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
     clientno = generate_random_string(10)
     cursor = db.cursor()
     sql = "INSERT INTO clients (clientno ,fname, lname, telno, email) VALUES (%s, %s, %s, %s,%s)"

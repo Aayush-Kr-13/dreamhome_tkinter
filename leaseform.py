@@ -15,12 +15,6 @@ def submit_data():
     client = client_entry.get()
     property = property_entry.get()
     city = city_entry.get()
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
     lease_id = generate_random_string(6)
     cursor = db.cursor()
     sql = "INSERT INTO lease (lease_id , owner_id, client_id, property_no, city) VALUES (%s, %s, %s, %s,%s)"
