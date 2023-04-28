@@ -5,11 +5,11 @@ from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\admininterface.py")
+    os.system("python admininterface.py")
     
 def open_code_2():
     root.destroy()
-    os.system("python dreamhome_tkinter\\loginpage.py")
+    os.system("python loginpage.py")
 
 
 def check_credentials():

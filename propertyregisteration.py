@@ -35,7 +35,7 @@ def submit_data():
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\userinterface.py")
+    os.system("python userinterface.py")
 
 root = tk.Tk()
 root.geometry("400x700")

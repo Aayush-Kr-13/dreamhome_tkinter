@@ -5,14 +5,14 @@ from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\userInterface.py")
+    os.system("python userInterface.py")
+
 
 def display_table1():
     city_id = city_id_entry.get()
-    property_id = property_id_entry.get()
     tree.delete(*tree.get_children())
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties"
+    sql = "SELECT * FROM properties ORDER BY RATING DESC"
     mycursor.execute(sql, ())
     data = mycursor.fetchall()
     for row in data:
@@ -20,11 +20,11 @@ def display_table1():
 
 def display_table():
     city_id = city_id_entry.get()
-    property_id = property_id_entry.get()
+    # property_id = property_id_entry.get()
     tree.delete(*tree.get_children())
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s and property_no = %s"
-    mycursor.execute(sql, (city_id,property_id))
+    sql = "SELECT * FROM properties WHERE city = %s"
+    mycursor.execute(sql, (city_id,))
     data = mycursor.fetchall()
     for row in data:
         tree.insert("", "end", values=row)
@@ -33,10 +33,10 @@ def display_table():
 
 def search_database():
     city_id = city_id_entry.get()
-    property_id = property_id_entry.get()
+    # property_id = property_id_entry.get()
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s and property_no = %s"
-    mycursor.execute(sql, (city_id,property_id))
+    sql = "SELECT * FROM properties WHERE city = %s ORDER BY rating DESC"
+    mycursor.execute(sql, (city_id,))
     data = mycursor.fetchall()
     if len(data) > 0:
         success_label = tk.Label(root, text="Property Found!",bg="lightgreen")
@@ -46,7 +46,7 @@ def search_database():
         error_label = tk.Label(root, text="Property Not Found",bg="Red")
         error_label.place(x=110, y=215)
         city_id_entry.delete(0, 'end')
-        property_id_entry.delete(0, "end")
+        # property_id_entry.delete(0, "end")
 
 root = tk.Tk()
 root.title("Property List")
@@ -68,10 +68,10 @@ city_id_label.place(x=5,y=100)
 city_id_entry = tk.Entry(root)
 city_id_entry.place(x=100,y=100)
 
-property_id_label = tk.Label(root, text="Property No:",bg="#2C3E50",fg="white",font=large_font1)
-property_id_label.place(x=5,y=180)
-property_id_entry = tk.Entry(root)
-property_id_entry.place(x=100,y=180)
+# property_id_label = tk.Label(root, text="Property No:",bg="#2C3E50",fg="white",font=large_font1)
+# property_id_label.place(x=5,y=180)
+# property_id_entry = tk.Entry(root)
+# property_id_entry.place(x=100,y=180)
 
 search_button = tk.Button(root, text="Search", command=search_database,bg="#1ABC9C")
 search_button.place(x=80,y=250)
