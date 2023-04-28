@@ -2,17 +2,11 @@ import tkinter as tk
 import mysql.connector
 from tkinter import ttk
 import os
+from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
     os.system("python dreamhome_tkinter\\admininterface.py")
-
-db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='12345',
-        database='proj'
-)
 
 def display_table1():
     tree.delete(*tree.get_children())

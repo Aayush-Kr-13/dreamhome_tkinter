@@ -19,7 +19,7 @@ def open_code_4():
 
 def open_code_5():
     root.destroy()
-    os.system("python dreamhome_tkinter\\addinterest.py")
+    os.system("python addinterest.py")
 
 root = tk.Tk()
 root.title("Interface")

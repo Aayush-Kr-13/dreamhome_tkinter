@@ -1,5 +1,5 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 import string
 import os
 
@@ -14,12 +14,6 @@ def submit_data():
     postal_code=postal_code_entry.get()
     owner_name=owner_name_entry.get()
     owner_number=owner_number_entry.get()
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
     cursor = db.cursor()
     sql = "INSERT INTO properties (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_number) VALUES (%s, %s, %s, %s,%s,%s, %s, %s, %s,%s)"
     values = (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_number)

@@ -1,5 +1,5 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 import os
 
 def open_code_2():
@@ -9,13 +9,6 @@ def open_code_2():
 def back_button():
   window.destroy()
   os.system("python staffinterface.py")
-
-db = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Aayush@2301',
-    database='Dreamhouse'
-)
 
 cursor = db.cursor()
 

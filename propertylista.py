@@ -1,18 +1,11 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 from tkinter import ttk
 import os
 
 def open_code_1():
     root.destroy()
     os.system("python dreamhome_tkinter\\admininterface.py")
-
-db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-)
 
 def display_table1():
     city_id = city_id_entry.get()

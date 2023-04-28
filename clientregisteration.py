@@ -1,8 +1,9 @@
 import tkinter as tk
-import mysql.connector
+from tempCodeRunnerFile import db
 import random
 import string
 import os
+from usermail import send_mail
 
 def generate_random_string(length):
     all_chars = list(string.digits + string.ascii_letters.upper())
@@ -15,12 +16,6 @@ def submit_data():
     lname = lname_entry.get()
     telno = telno_entry.get()
     email = email_entry.get()
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
     clientno = generate_random_string(10)
     cursor = db.cursor()
     sql = "INSERT INTO clients (clientno ,fname, lname, telno, email) VALUES (%s, %s, %s, %s,%s)"
@@ -28,6 +23,7 @@ def submit_data():
     cursor.execute(sql, values)
     db.commit()
     db.close()
+    send_mail(email,fname,clientno)
     fname_entry.delete(0, tk.END)
     lname_entry.delete(0, tk.END)
     telno_entry.delete(0, tk.END)
@@ -40,7 +36,7 @@ def submit_data():
  
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\loginpage.py")
+    os.system("python loginpage.py")
 
 root = tk.Tk()
 root.title("User Registeration")

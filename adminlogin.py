@@ -1,6 +1,7 @@
 import tkinter as tk
 import mysql.connector
 import os
+from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
@@ -14,13 +15,6 @@ def open_code_2():
 def check_credentials():
     admin_id = admin_id_box.get()
     password = password_box.get()
-    
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='12345',
-        database='proj'
-    )
     
     cursor = db.cursor()
 

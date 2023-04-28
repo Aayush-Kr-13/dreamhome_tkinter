@@ -1,8 +1,8 @@
 import tkinter as tk
-import mysql.connector
 import string
 import os
 import random
+from tempCodeRunnerFile import db
 
 def generate_random_string(length):
     all_chars = list(string.digits + string.ascii_letters.upper())
@@ -17,12 +17,6 @@ def submit_data():
     branch_street = branch_street_entry.get()
     branch_city=branch_city_entry.get()
     branch_postal_code=branch_postal_code_entry.get()
-    db = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='Aayush@2301',
-        database='Dreamhouse'
-    )
     cursor = db.cursor()
     sql = "INSERT INTO branches (branch_id, branch_name, branch_hno, branch_street, branch_city, branch_postal_code) VALUES (%s, %s, %s, %s,%s,%s)"
     values = (branch_id, branch_name, branch_hno, branch_street, branch_city, branch_postal_code)
