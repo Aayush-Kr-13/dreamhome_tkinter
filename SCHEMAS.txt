@@ -9,6 +9,20 @@ fname varchar (25),
  email varchar (25)
  );
 
+insert into clients values
+('C001', 'John', 'Doe', '555-1234', 'johndoe@email.com'),
+('C002', 'Jane', 'Smith', '555-5678', 'janesmith@email.com'),
+('C003', 'Robert', 'Johnson', '555-2468', 'robertjohnson@email.com'),
+('C004', 'Sarah', 'Lee', '555-9876', 'sarahlee@email.com'),
+('C005', 'Michael', 'Davis', '555-5432', 'michaeldavis@email.com'),
+('C006', 'Emily', 'Clark', '555-7890', 'emilyclark@email.com'),
+('C007', 'David', 'Brown', '555-1111', 'davidbrown@email.com'),
+('C008', 'Maria', 'Garcia', '555-2222', 'mariagarcia@email.com'),
+('C009', 'Jason', 'Nguyen', '555-3333', 'jasonnguyen@email.com'),
+('C010', 'Ava', 'Wilson', '555-4444', 'avawilson@email.com'),
+('C011', 'Isabella', 'Lee', '555-5555', 'isabellalee@email.com'),
+('C012', 'William', 'Taylor', '555-6666', 'williamtaylor@email.com');
+
 STAFF
 
 create table staffs (staffno varchar (10) PRIMARY KEY,
@@ -22,6 +36,18 @@ branch_id varchar (25),
 salary numeric
 );
 
+insert into staffs values
+('S001', 'John', 'Doe', 'Male', '1980-05-10', 'Manager', NULL, 'B001', 5000.00),
+('S002', 'Jane', 'Smith', 'Female', '1985-07-12', 'Assistant Manager', 'S001', 'B002', 4000.00),
+('S003', 'Robert', 'Johnson', 'Male', '1990-01-20', 'Supervisor', 'S001', 'B003', 3500.00),
+('S004', 'Sarah', 'Lee', 'Female', '1988-03-15', 'Teller', 'S002', 'B001', 2500.00),
+('S005', 'Michael', 'Davis', 'Male', '1992-11-23', 'Teller', 'S002', 'B002', 2500.00),
+('S006', 'Emily', 'Clark', 'Female', '1995-02-28', 'Teller', 'S002', 'B003', 2500.00),
+('S007', 'David', 'Brown', 'Male', '1983-09-18', 'Teller', 'S003', 'B001', 2500.00),
+('S008', 'Maria', 'Garcia', 'Female', '1986-12-08', 'Teller', 'S003', 'B002', 2500.00),
+('S009', 'Jason', 'Nguyen', 'Male', '1991-04-01', 'Teller', 'S003', 'B003', 2500.00),
+('S010', 'Ava', 'Wilson', 'Female', '1994-06-17', 'Teller', 'S003', 'B001', 2500.00);
+
 BRANCH_DETAILS
 
 create table branches(
@@ -33,12 +59,13 @@ branch_city varchar(255),
 branch_postal_code varchar(255)
 );
 
-insert into branches values("000001","VIDYANAGAR_BRANCH","AI-77","WARRINGTON STREET","HUBLI","581119"),
+insert into branches values
+("000001","VIDYANAGAR_BRANCH","AI-77","WARRINGTON STREET","HUBLI","581119"),
 ("000002","COURT_CIRCLE_BRANCH","AI-77","COURT STREET","DHARWAD","581121"),
 ("000003","PARK_CIRCUS_BRANCH","AI-77","PARK STREET","KOLKATA","700019"),
 ("000004","CIRCUS_MAIDAN_BRANCH","AI-77","CIRCUS MAIDAN","KATWA","680009"),
-("000005","GLASGOW_BRANCH_1","23_10u_70","WARRINGTON STREET","GLASGOW","900119");
-insert into branches values("000006","GLASGOW_BRANCH_2","23_10u_70","WARRINGTON STREET","GLASGOW","900200");
+("000005","GLASGOW_BRANCH_1","23_10u_70","WARRINGTON STREET","GLASGOW","900119"),
+("000006","GLASGOW_BRANCH_2","23_10u_70","WARRINGTON STREET","GLASGOW","900200");
 
 Properties
 
@@ -54,6 +81,18 @@ owner_name varchar (25),
 owner_number varchar (25));
 alter table properties add verificiation bool default false;
 
+insert into properties values
+('P001', 'House', 4, 5000.00, 1234, 'Main St', 'Los Angeles', '90001', 'John Doe', '555-1234'),
+('P002', 'Apartment', 2, 2000.00, 5678, 'Elm St', 'New York', '10001', 'Jane Smith', '555-5678'),
+('P003', 'Condo', 3, 3500.00, 2468, 'Maple Ave', 'San Francisco', '94101', 'Robert Johnson', '555-2468'),
+('P004', 'House', 5, 8000.00, 9876, 'Oak St', 'Chicago', '60601', 'Sarah Lee', '555-9876'),
+('P005', 'Apartment', 1, 1000.00, 5432, 'Birch Rd', 'Miami', '33101', 'Michael Davis', '555-5432'),
+('P006', 'House', 3, 4000.00, 7890, 'Cedar St', 'Austin', '78701', 'Emily Clark', '555-7890'),
+('P007', 'Condo', 2, 2500.00, 1111, 'Pine St', 'Seattle', '98101', 'David Brown', '555-1111'),
+('P008', 'Apartment', 1, 1500.00, 2222, 'Walnut Blvd', 'Portland', '97201', 'Maria Garcia', '555-2222'),
+('P009', 'Condo', 2, 3000.00, 3333, 'Spruce St', 'Denver', '80201', 'Jason Nguyen', '555-3333'),
+('P010', 'House', 4, 5500.00, 4444, 'Juniper St', 'Houston', '77001', 'Ava Wilson', '555-4444');
+
 Interests:
 create table interests(
 owner_no varchar(255),
@@ -63,6 +102,18 @@ owner_ph_no varchar(255),
 client_ph_no varchar(255)
 );
 
+insert into interests values
+('O001', 'C001', 'P001', '555-1111', '555-2222'),
+('O002', 'C002', 'P002', '555-3333', '555-4444'),
+('O003', 'C003', 'P003', '555-5555', '555-6666'),
+('O004', 'C004', 'P004', '555-7777', '555-8888'),
+('O005', 'C005', 'P005', '555-9999', '555-0000'),
+('O006', 'C006', 'P006', '555-1212', '555-1313'),
+('O007', 'C007', 'P007', '555-1414', '555-1515'),
+('O008', 'C008', 'P008', '555-1616', '555-1717'),
+('O009', 'C009', 'P009', '555-1818', '555-1919'),
+('O010', 'C010', 'P010', '555-2020', '555-2121');
+
 Lease Form:
 create table lease(
 lease_id varchar (15) PRIMARY KEY,
@@ -71,6 +122,18 @@ client_id varchar (15),
 property_no varchar (10),
 city varchar (25)
 );
+
+insert into lease values
+('L001', 'O001', 'C001', 'P001', 'Los Angeles'),
+('L002', 'O002', 'C002', 'P002', 'New York'),
+('L003', 'O003', 'C003', 'P003', 'San Francisco'),
+('L004', 'O004', 'C004', 'P004', 'Chicago'),
+('L005', 'O005', 'C005', 'P005', 'Miami'),
+('L006', 'O006', 'C006', 'P006', 'Austin'),
+('L007', 'O007', 'C007', 'P007', 'Seattle'),
+('L008', 'O008', 'C008', 'P008', 'Portland'),
+('L009', 'O009', 'C009', 'P009', 'Denver'),
+('L010', 'O010', 'C010', 'P010', 'Houston');
 
 QUERIES:
 
