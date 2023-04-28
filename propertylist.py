@@ -10,10 +10,9 @@ def open_code_1():
 
 def display_table1():
     city_id = city_id_entry.get()
-    property_id = property_id_entry.get()
     tree.delete(*tree.get_children())
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties"
+    sql = "SELECT * FROM properties ORDER BY RATING DESC"
     mycursor.execute(sql, ())
     data = mycursor.fetchall()
     for row in data:
@@ -36,7 +35,7 @@ def search_database():
     city_id = city_id_entry.get()
     # property_id = property_id_entry.get()
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s"
+    sql = "SELECT * FROM properties WHERE city = %s ORDER BY rating DESC"
     mycursor.execute(sql, (city_id,))
     data = mycursor.fetchall()
     if len(data) > 0:

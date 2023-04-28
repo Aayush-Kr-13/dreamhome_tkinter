@@ -20,6 +20,7 @@ def search_database():
         mycursor.execute("SELECT owner_number FROM properties WHERE property_no = %s", (property_no,))
         property_info = mycursor.fetchone()
         if property_info is not None:
+            mycursor.execute("UPDATE properties SET rating=rating+1 WHERE property_no = %s", (property_no,))
             owner_ph_no = property_info[0]
             mycursor.execute("SELECT telno FROM clients WHERE clientno = %s", (client_id,))
             client_ph_no = mycursor.fetchone()[0]
