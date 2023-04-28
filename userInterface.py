@@ -3,23 +3,23 @@ import os
 
 def open_code_1():
     root.destroy()
-    os.system("python propertyregisteration.py")
+    os.system("python dreamhome_tkinter\\propertyregisteration.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python propertylist.py")
+    os.system("python dreamhome_tkinter\\propertylist.py")
     
 def open_code_3():
     root.destroy()
-    os.system("python loginpage.py")
+    os.system("python dreamhome_tkinter\\loginpage.py")
     
 def open_code_4():
     root.destroy()
-    os.system("python checkinterest.py")
+    os.system("python dreamhome_tkinter\\checkinterest.py")
 
 def open_code_5():
     root.destroy()
-    os.system("python addinterest.py")
+    os.system("python dreamhome_tkinter\\addinterest.py")
 
 root = tk.Tk()
 root.title("Interface")

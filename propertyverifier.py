@@ -4,11 +4,11 @@ import os
 
 def open_code_2():
   window.destroy()
-  os.system("python loginpage.py")
+  os.system("python dreamhome_tkinter\\loginpage.py")
   
 def back_button():
   window.destroy()
-  os.system("python staffinterface.py")
+  os.system("python dreamhome_tkinter\\staffinterface.py")
 
 cursor = db.cursor()
 

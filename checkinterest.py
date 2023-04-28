@@ -5,11 +5,11 @@ from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
-    os.system("python userInterface.py")
+    os.system("python dreamhome_tkinter\\userInterface.py")
 
 def open_code_2():
     root.destroy()
-    os.system("python checkinterest.py")
+    os.system("python dreamhome_tkinter\\checkinterest.py")
 
 def display_table():
     client_id = client_id_entry.get()

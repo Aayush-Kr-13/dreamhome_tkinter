@@ -5,7 +5,7 @@ from tempCodeRunnerFile import db
 
 def open_code_2():
   root.destroy()
-  os.system("python userInterface.py")
+  os.system("python dreamhome_tkinter//userInterface.py")
 
 def search_database():
     client_id = client_id_entry.get()
