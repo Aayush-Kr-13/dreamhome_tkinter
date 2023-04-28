@@ -114,6 +114,17 @@ insert into interests values
 ('O009', 'C009', 'P009', '555-1818', '555-1919'),
 ('O010', 'C010', 'P010', '555-2020', '555-2121');
 
+Admin:
+create table admin(
+fname varchar (25),
+lname varchar (25),
+admin_id varchar (25),
+password varchar (25)
+);
+
+insert into admin values
+('Aayush','Kumar','aayushking','aayush1302');
+
 Lease Form:
 create table lease(
 lease_id varchar (15) PRIMARY KEY,
