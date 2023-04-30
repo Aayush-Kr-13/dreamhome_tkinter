@@ -24,7 +24,7 @@ def open_code_4():
 root = tk.Tk()
 root.title("Main Page")
 root.geometry("500x500")
-frame = tk.Frame(root, width=350, height=500, bg=bg)
+frame = tk.Frame(root, width=500, height=500, bg=bg)
 frame.pack(fill=tk.BOTH, expand=True)
 
 large_font = ('Verdana', 40)
