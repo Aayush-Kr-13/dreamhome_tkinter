@@ -149,9 +149,11 @@ insert into lease values
 QUERIES:
 
 1>SELECT * FROM BRANCH_DETAILS;
-2>SELECT T.BRANCH_CITY,COUNT(T.BRANCH_CITY)
+
+2>SELECT T.BRANCH_CITY,COUNT(T.BRANCH_CITY) AS NumberOfBranches
 FROM BRANCHES T
 GROUP BY T.BRANCH_CITY;
+
 
 3>select fname,position,salary from staffs order by fname;
 

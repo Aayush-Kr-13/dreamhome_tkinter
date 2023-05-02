@@ -13,10 +13,10 @@ def submit_data():
     city=city_entry.get()
     postal_code=postal_code_entry.get()
     owner_name=owner_name_entry.get()
-    owner_number=owner_number_entry.get()
+    owner_id=owner_id_entry.get()
     cursor = db.cursor()
-    sql = "INSERT INTO properties (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_number) VALUES (%s, %s, %s, %s,%s,%s, %s, %s, %s,%s)"
-    values = (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_number)
+    sql = "INSERT INTO properties (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_id) VALUES (%s, %s, %s, %s,%s,%s, %s, %s, %s,%s)"
+    values = (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_id)
     cursor.execute(sql, values)
     db.commit()
     db.close()
@@ -29,7 +29,7 @@ def submit_data():
     city_entry.delete(0, tk.END)
     postal_code_entry.delete(0, tk.END)
     owner_name_entry.delete(0, tk.END)
-    owner_number_entry.delete(0, tk.END)
+    owner_id_entry.delete(0, tk.END)
     open_code_1()
     tk.messagebox.showinfo("Success", "Data submitted successfully")
 
@@ -98,10 +98,10 @@ owner_name_label.place(x=30,y=560)
 owner_name_entry = tk.Entry(frame)
 owner_name_entry.place(x=180,y=560)
 
-owner_number_label = tk.Label(frame, text="Enter Owner Number:")
-owner_number_label.place(x=30,y=620)
-owner_number_entry = tk.Entry(frame)
-owner_number_entry.place(x=180,y=620)
+owner_id_label = tk.Label(frame, text="Enter Owner Id:")
+owner_id_label.place(x=30,y=620)
+owner_id_entry = tk.Entry(frame)
+owner_id_entry.place(x=180,y=620)
 
 submit_button = tk.Button(frame, text="Submit",bg="#1ABC9C", command=submit_data)
 submit_button.place(x=160,y=660)

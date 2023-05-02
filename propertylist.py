@@ -81,7 +81,7 @@ tree.heading("six", text="Address Street")
 tree.heading("seven", text="City")
 tree.heading("eight", text="Postal Code")
 tree.heading("nine", text="Owner Name")
-tree.heading("ten", text="Owner Number")
+tree.heading("ten", text="Owner Id")
 tree.heading("eleven", text="Verified")
 
 tree.column("one", width=100)
