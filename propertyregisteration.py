@@ -30,12 +30,12 @@ def submit_data():
     postal_code_entry.delete(0, tk.END)
     owner_name_entry.delete(0, tk.END)
     owner_id_entry.delete(0, tk.END)
-    open_code_1()
-    tk.messagebox.showinfo("Success", "Data submitted successfully")
+    success_label = tk.Label(root, text="Property Registered!",bg="lightgreen")
+    success_label.place(x=30, y=660)
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\userinterface.py")
+    os.system("python dreamhome_tkinter\\userInterface.py")
 
 root = tk.Tk()
 root.geometry("400x700")

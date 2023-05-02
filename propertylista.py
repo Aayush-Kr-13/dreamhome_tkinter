@@ -5,7 +5,7 @@ from tempCodeRunnerFile import db
 
 def open_code_1():
     root.destroy()
-    os.system("python dreamhome_tkinter\\userInterface.py")
+    os.system("python dreamhome_tkinter\\admininterface.py")
 
 
 def display_table1():
