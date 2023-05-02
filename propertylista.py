@@ -12,7 +12,7 @@ def display_table1():
     city_id = city_id_entry.get()
     tree.delete(*tree.get_children())
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties ORDER BY RATING DESC"
+    sql = "SELECT * FROM properties where available = true ORDER BY RATING DESC"
     mycursor.execute(sql, ())
     data = mycursor.fetchall()
     for row in data:
@@ -22,7 +22,7 @@ def display_table():
     city_id = city_id_entry.get()
     tree.delete(*tree.get_children())
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s"
+    sql = "SELECT * FROM properties WHERE city = %s and available = true"
     mycursor.execute(sql, (city_id,))
     data = mycursor.fetchall()
     for row in data:
@@ -32,7 +32,7 @@ def display_table():
 def search_database():
     city_id = city_id_entry.get()
     mycursor = db.cursor()
-    sql = "SELECT * FROM properties WHERE city = %s ORDER BY rating DESC"
+    sql = "SELECT * FROM properties WHERE city = %s and available = true ORDER BY rating DESC"
     mycursor.execute(sql, (city_id,))
     data = mycursor.fetchall()
     if len(data) > 0:

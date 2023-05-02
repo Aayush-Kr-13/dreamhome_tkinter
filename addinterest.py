@@ -17,20 +17,22 @@ def search_database():
     client = mycursor.fetchone()
     
     if client is not None:
-        mycursor.execute("SELECT owner_number FROM properties WHERE property_no = %s", (property_no,))
-        property_info = mycursor.fetchone()
-        if property_info is not None:
-            mycursor.execute("UPDATE properties SET rating=rating+1 WHERE property_no = %s", (property_no,))
-            owner_ph_no = property_info[0]
-            mycursor.execute("SELECT telno FROM clients WHERE clientno = %s", (client_id,))
-            client_ph_no = mycursor.fetchone()[0]
-            mycursor.execute("SELECT clientno FROM clients WHERE telno = %s", (owner_ph_no,))
-            owner_no = mycursor.fetchone()[0]
-            mycursor.execute("INSERT INTO INTERESTS(owner_no,client_no,property_no,owner_ph_no,client_ph_no) VALUES(%s,%s,%s,%s,%s)", (owner_no,client_id,property_no,owner_ph_no,client_ph_no))
-            db.commit()
-            db.close()
-            success_label = tk.Label(root, text="Registration Successful!",bg="lightgreen")
-            success_label.place(x=130, y=260)
+        mycursor.execute("SELECT owner_id FROM properties WHERE property_no = %s", (property_no,))
+        owner_id = mycursor.fetchone()[0]
+        if owner_id is not None:
+           mycursor.execute("UPDATE properties SET rating=rating+1 WHERE property_no = %s", (property_no,))
+           mycursor.execute("SELECT telno FROM clients WHERE clientno = %s", (owner_id,))
+           owner_ph_no = mycursor.fetchone()[0];
+           mycursor.execute("SELECT telno FROM clients WHERE clientno = %s", (client_id,))
+           client_ph_no = mycursor.fetchone()[0];
+           mycursor.execute("INSERT INTO INTERESTS VALUES(%s,%s,%s,%s,%s)", (owner_id,client_id,property_no,owner_ph_no,client_ph_no))
+           db.commit()
+           db.close()
+           success_label = tk.Label(root, text="Registration Successful!",bg="lightgreen")
+           success_label.place(x=130, y=260)
+           client_id_entry.delete(0, tk.END)
+           last_name_entry.delete(0, tk.END)
+           property_no_entry.delete(0, tk.END)
         else:
             error_label = tk.Label(root, text="Incorrect Credentials",bg="Red")
             error_label.place(x=130, y=260)

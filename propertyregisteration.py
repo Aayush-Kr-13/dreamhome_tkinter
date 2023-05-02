@@ -2,6 +2,7 @@ import tkinter as tk
 from tempCodeRunnerFile import db
 import string
 import os
+from sendmailproperty import send_mailp
 
 def submit_data():
     property_no = property_no_entry.get()
@@ -15,9 +16,13 @@ def submit_data():
     owner_name=owner_name_entry.get()
     owner_id=owner_id_entry.get()
     cursor = db.cursor()
-    sql = "INSERT INTO properties (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_id) VALUES (%s, %s, %s, %s,%s,%s, %s, %s, %s,%s)"
-    values = (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_id)
+    temp=0
+    sql = "INSERT INTO properties (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_id,rating) VALUES (%s, %s, %s, %s,%s,%s, %s, %s, %s,%s,%s)"
+    values = (property_no, property_type, rooms, rent, Address_hno, Address_street, city, postal_code, owner_name, owner_id,temp)
     cursor.execute(sql, values)
+    cursor.execute("SELECT email FROM clients WHERE clientno = %s and fname = %s ", (owner_id,owner_name))
+    mail = cursor.fetchall()
+    send_mailp(mail,owner_name)
     db.commit()
     db.close()
     property_no_entry.delete(0, tk.END)
@@ -93,7 +98,7 @@ postal_code_label.place(x=30,y=500)
 postal_code_entry = tk.Entry(frame)
 postal_code_entry.place(x=180,y=500)
 
-owner_name_label = tk.Label(frame, text="Enter Owner Name:")
+owner_name_label = tk.Label(frame, text="Enter First Name:")
 owner_name_label.place(x=30,y=560)
 owner_name_entry = tk.Entry(frame)
 owner_name_entry.place(x=180,y=560)

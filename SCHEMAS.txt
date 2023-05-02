@@ -127,11 +127,14 @@ insert into admin values
 
 Lease Form:
 create table lease(
-lease_id varchar (15) PRIMARY KEY,
+lease_id varchar (15),
 owner_id varchar (15),
 client_id varchar (15),
 property_no varchar (10),
-city varchar (25)
+city varchar (25),
+sdate date,
+edate date,
+PRIMARY KEY (lease_id,property_no)
 );
 
 insert into lease values

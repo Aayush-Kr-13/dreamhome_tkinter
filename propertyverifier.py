@@ -15,13 +15,13 @@ cursor = db.cursor()
 def verify_property():
   property_number = property_number_entry.get()
   fullName = fullName_entry.get()
-  query = f"UPDATE properties SET verificiation = TRUE WHERE property_no = '{property_number}' AND owner_name='{fullName}'"
+  query = f"UPDATE properties SET verification = TRUE WHERE property_no = '{property_number}' AND owner_name='{fullName}'"
   cursor.execute(query)
   db.commit()
   property_number_entry.delete(0, 'end')
   fullName_entry.delete(0, 'end')
   if cursor.rowcount > 0:
-    success_label = tk.Label(window, text="Property Verified!")
+    success_label = tk.Label(window, text="Property Verified!",bg="lightgreen")
     success_label.place(x=150, y=220)
   else:
     error_label = tk.Label(window, text="Property Not Found",bg="red")
