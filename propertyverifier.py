@@ -1,6 +1,7 @@
 import tkinter as tk
 from tempCodeRunnerFile import db
 import os
+from sendmailverifier import send_mailv
 
 def open_code_2():
   window.destroy()
@@ -17,15 +18,23 @@ def verify_property():
   fullName = fullName_entry.get()
   query = f"UPDATE properties SET verification = TRUE WHERE property_no = '{property_number}' AND owner_name='{fullName}'"
   cursor.execute(query)
+  query1 = f"select c.email  from clients as c join properties as p on c.clientno = p.owner_id where p.property_no = '{property_number}';"
+  cursor.execute(query1)
+  mail = cursor.fetchone()[0]
+  print(mail)
   db.commit()
-  property_number_entry.delete(0, 'end')
-  fullName_entry.delete(0, 'end')
+  db.close()
   if cursor.rowcount > 0:
     success_label = tk.Label(window, text="Property Verified!",bg="lightgreen")
     success_label.place(x=150, y=220)
+    send_mailv(mail,fullName)
+    property_number_entry.delete(0, 'end')
+    fullName_entry.delete(0, 'end')
   else:
     error_label = tk.Label(window, text="Property Not Found",bg="red")
     error_label.place(x=150, y=220)
+    property_number_entry.delete(0, 'end')
+    fullName_entry.delete(0, 'end')
 
 
 window = tk.Tk()

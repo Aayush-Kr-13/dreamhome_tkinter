@@ -1,0 +1,71 @@
+-- Queries PDF 2:
+
+(a) List details of staff supervised by a named Supervisor at the branch.
+
+select s1.fname, s1.lname, s1.supervisor as 'Supervisor'
+from staffs s1
+where supervisor = "aayush";
+
+(b) List details of all Assistants/manager alphabetically by name at the branch.
+
+Select fname, lname, staffs.position
+from staffs, branches
+where position = "manager" and staffs.branch_id = branches.branch_id
+order by fname;
+
+(c) List the details of property (including the rental deposit) available for rent at the branch, along
+with the owner’s details.
+
+
+Select properties.* , clients.*
+from properties
+join clients
+on clients.clientno = properties.owner_id
+where available = 1;
+
+
+(d) List the details of properties managed by a named member of staff at the branch.
+
+select properties.* from branches
+join properties
+on properties.alloted_branch = branches.branch_id 
+join staffs
+on staffs.branch_id = branches.branch_id
+where staffs.fname = "robert";
+
+(e) List the clients registering at the branch and the names of the members of staff who registered
+the clients.
+
+select clients.*
+from properties
+join clients
+on clients.clientno = properties.owner_id
+join branches
+on branches.branch_id = properties.alloted_branch;
+
+(f) Identify properties located in Glasgow with rents no higher than £450.
+
+select * from properties 
+where (rent <= 15000) and city = "Glassgow";
+
+(g) Identify the name and telephone number of an owner of a given property.
+
+select clients.fname, clients.telno
+from clients, properties
+where clients.clientno = properties.owner_id and properties.property_no = "1234";
+
+(h) List the details of comments made by clients viewing a given property.
+
+Select *
+from properties
+where rating>1;
+
+(i) Display the names and phone numbers of clients who have viewed a given property but not supplied comments.
+
+select clients.*
+from clients, interests
+where Not exists (
+select client_no
+from interests
+WHERE interests.client_no = clients.clientno
+);

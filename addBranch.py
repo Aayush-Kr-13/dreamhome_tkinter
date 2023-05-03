@@ -30,7 +30,6 @@ def submit_data():
     branch_postal_code_entry.delete(0, tk.END)
     root.destroy()
     open_code_2()
-    tk.messagebox.showinfo("Success", "Data submitted successfully")
 
 def open_code_1():
     root.destroy()
@@ -38,7 +37,7 @@ def open_code_1():
     
 def open_code_2():
     root.destroy()
-    os.system("python dreamhome_tkinter\\addbranch.py")
+    os.system("python dreamhome_tkinter\\addBranch.py")
 
 root = tk.Tk()
 root.geometry("350x500")
